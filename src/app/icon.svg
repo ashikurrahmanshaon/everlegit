@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Dark carbon background -->
+  <rect width="64" height="64" rx="14" fill="#090B10" />
+  <rect width="62" height="62" x="1" y="1" rx="13" stroke="#2563EB" stroke-opacity="0.3" stroke-width="1.5" />
+  
+  <!-- Architectural Monogram for Ever Legit: Interlocking E & L Prism -->
+  <defs>
+    <linearGradient id="elGrad1" x1="12" y1="12" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#60A5FA" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+    <linearGradient id="elGrad2" x1="52" y1="16" x2="16" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+  </defs>
+
+  <!-- Precision geometric interlocking EL crest -->
+  <!-- Top horizontal spine (E top bar) -->
+  <path d="M16 18H48V25H25V30H44V36H25V46H48V52H16V18Z" fill="url(#elGrad1)" />
+  <!-- Dynamic forward chevron / structural anchor (L base & accent cut) -->
+  <path d="M30 40L40 30H48L38 40H48V46H30V40Z" fill="url(#elGrad2)" opacity="0.9" />
+  
+  <!-- Subtle core pulse dot -->
+  <circle cx="48" cy="18" r="2.5" fill="#60A5FA" />
+</svg>

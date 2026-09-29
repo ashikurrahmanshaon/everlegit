@@ -1,0 +1,200 @@
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
+import {
+  ShoppingBag,
+  ArrowRight,
+  CheckCircle2,
+  Globe,
+  PhoneCall,
+  Mail,
+  Copy,
+  Check,
+  Zap,
+  TrendingUp,
+  ShieldCheck,
+} from "lucide-react";
+import { COMPANY_CONTACT } from "@/data/siteData";
+
+export default function EcommerceServicePage() {
+  const [copiedType, setCopiedType] = useState<string | null>(null);
+
+  const copyToClipboard = (text: string, type: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedType(type);
+    setTimeout(() => setCopiedType(null), 2000);
+  };
+
+  const capabilities = [
+    {
+      title: "Storefront Engineering",
+      desc: "Fast, custom e-commerce web applications optimized for mobile checkout and global consumer trust.",
+    },
+    {
+      title: "Cross-Border Checkout",
+      desc: "Multi-currency settlement, regional payment method integration, and smooth localized checkout flows.",
+    },
+    {
+      title: "Inventory & Fulfillment",
+      desc: "Synchronized inventory management across sales channels and automated warehouse order routing.",
+    },
+    {
+      title: "Conversion Optimization",
+      desc: "A/B testing, cart recovery sequences, and friction-free user journeys designed to increase average order value.",
+    },
+  ];
+
+  return (
+    <div className="pt-28 pb-20 sm:pt-36 sm:pb-28 relative overflow-hidden bg-[#0b0f19] font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-xs text-slate-400 mb-6">
+          <Link href="/services" className="hover:text-blue-400 transition-colors">
+            Services
+          </Link>
+          <span className="text-slate-600">/</span>
+          <span className="text-blue-400 font-semibold">E-Commerce</span>
+        </div>
+
+        {/* Hero */}
+        <div className="max-w-3xl space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400">
+            <span>Digital Retail & Storefronts</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
+            E-Commerce Engineered for the{" "}
+            <span className="text-blue-400">Global Consumer.</span>
+          </h1>
+
+          <p className="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed font-normal pt-1">
+            Build, operate, and scale online commerce businesses across international markets. We combine high-speed digital storefronts with end-to-end operational execution.
+          </p>
+
+          {/* Quick Direct Desk Connect */}
+          <div className="pt-3 flex flex-wrap items-center gap-3">
+            <a
+              href={`tel:${COMPANY_CONTACT.phoneRaw}`}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-xs font-semibold text-white transition-all active:scale-95 shadow-md shadow-blue-900/30"
+            >
+              <PhoneCall className="w-3.5 h-3.5" />
+              <span>Call: {COMPANY_CONTACT.phoneDisplay}</span>
+            </a>
+            <a
+              href={`mailto:${COMPANY_CONTACT.email}`}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-xs font-semibold text-slate-200 hover:text-white border border-white/10 transition-colors"
+            >
+              <Mail className="w-3.5 h-3.5 text-blue-400" />
+              <span>{COMPANY_CONTACT.email}</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Capabilities Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mt-14">
+          {capabilities.map((item, idx) => (
+            <div
+              key={idx}
+              className="p-6 sm:p-7 rounded-2xl bg-[#111726] border border-white/10 hover:border-white/20 transition-all flex flex-col justify-between group shadow-sm hover:shadow-lg"
+            >
+              <div>
+                <div className="w-9 h-9 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center font-bold text-xs mb-3.5">
+                  0{idx + 1}
+                </div>
+                <h3 className="text-lg font-bold text-white tracking-tight group-hover:text-blue-300 transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-2 font-normal">
+                  {item.desc}
+                </p>
+              </div>
+              <div className="pt-4 mt-5 border-t border-white/5 text-xs text-slate-400 flex items-center justify-between">
+                <span>Core Competency</span>
+                <span className="text-blue-400 font-medium">Ever Legit Model</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Operational Blueprint */}
+        <div className="mt-14 p-6 sm:p-10 rounded-3xl bg-[#111726] border border-white/10 space-y-6 shadow-xl">
+          <div className="max-w-2xl space-y-1.5">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-blue-400">
+              Execution Model
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              End-to-End E-Commerce Lifecycle
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+              Managing the critical connection points between online discovery, checkout speed, and product delivery.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              {
+                step: "Phase 1: Architecture",
+                desc: "Custom storefront design, technical payment setups, and responsive mobile optimization.",
+              },
+              {
+                step: "Phase 2: Operations",
+                desc: "Catalog listing, multi-currency processing, and shipping carrier integrations.",
+              },
+              {
+                step: "Phase 3: Scale",
+                desc: "Customer re-engagement automation, reviews syndication, and multi-market localization.",
+              },
+            ].map((phase, idx) => (
+              <div
+                key={idx}
+                className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2"
+              >
+                <div className="text-xs font-bold text-blue-400 uppercase tracking-wider">
+                  {phase.step}
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed font-normal">
+                  {phase.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA Desk */}
+        <div className="mt-14 p-6 sm:p-12 rounded-3xl bg-[#111726] border border-white/10 text-center space-y-5 shadow-2xl">
+          <div className="max-w-xl mx-auto space-y-2">
+            <span className="text-[11px] font-semibold text-blue-400 uppercase tracking-wider">
+              Direct Commerce Desk
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              Discuss Your E-Commerce Venture
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+              Reach out directly to review your digital storefront roadmap, checkout performance, or international sales goals.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <a
+              href={`tel:${COMPANY_CONTACT.phoneRaw}`}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-xs font-semibold text-white transition-all active:scale-95 shadow-md shadow-blue-900/30"
+            >
+              <PhoneCall className="w-3.5 h-3.5" />
+              <span>Call: {COMPANY_CONTACT.phoneDisplay}</span>
+            </a>
+
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-semibold text-slate-200 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 transition-all active:scale-95"
+            >
+              <span>Submit Project Inquiry</span>
+              <ArrowRight className="w-3.5 h-3.5 text-blue-400" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

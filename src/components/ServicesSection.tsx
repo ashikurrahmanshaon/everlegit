@@ -1,0 +1,123 @@
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import {
+  ShoppingBag,
+  Ship,
+  Code2,
+  BarChart3,
+  CheckCircle2,
+  ArrowRight,
+  Sparkles,
+} from "lucide-react";
+import { SERVICES } from "@/data/siteData";
+
+export default function ServicesSection() {
+  const getIcon = (iconName: string) => {
+    switch (iconName) {
+      case "ShoppingBag":
+        return ShoppingBag;
+      case "Ship":
+        return Ship;
+      case "Code2":
+        return Code2;
+      case "BarChart3":
+        return BarChart3;
+      default:
+        return Sparkles;
+    }
+  };
+
+  return (
+    <section className="py-20 sm:py-28 bg-[#0b0f19] relative overflow-hidden font-sans" id="services">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl h-[500px] bg-radial-glow pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header */}
+        <div className="max-w-3xl mx-auto text-center space-y-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
+            <span>Core Disciplines & Pillars</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
+            Built for{" "}
+            <span className="text-blue-400">
+              Commercial Execution.
+            </span>
+          </h2>
+          <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal max-w-2xl mx-auto">
+            From consumer digital storefronts and international trade logistics to custom cloud platforms and data-driven customer acquisition.
+          </p>
+        </div>
+
+        {/* Services Grid (Responsive 1 or 2 Columns) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-12 sm:mt-16">
+          {SERVICES.map((service, index) => {
+            const Icon = getIcon(service.iconName);
+
+            return (
+              <div
+                key={service.id}
+                className="luxury-card p-6 sm:p-8 lg:p-10 flex flex-col justify-between group"
+              >
+                <div>
+                  {/* Top Bar with Number & Icon */}
+                  <div className="flex items-center justify-between mb-5 sm:mb-6">
+                    <div className="w-12 h-12 rounded-2xl bg-blue-600/15 border border-blue-500/25 flex items-center justify-center text-blue-400 group-hover:scale-105 group-hover:text-blue-300 group-hover:bg-blue-600/25 transition-all p-3 shadow-md shadow-blue-950/40">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <span className="text-[11px] text-slate-400 font-semibold tracking-wider uppercase px-3 py-1 rounded-full bg-white/[0.04] border border-white/5">
+                      Pillar 0{index + 1}
+                    </span>
+                  </div>
+
+                  {/* Title & Short Description */}
+                  <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-blue-300 transition-colors tracking-tight">
+                    {service.title}
+                  </h3>
+                  <p className="text-slate-300 mt-2.5 text-xs sm:text-sm leading-relaxed">
+                    {service.shortDesc}
+                  </p>
+
+                  {/* Core Competencies Checklist */}
+                  <div className="mt-6 pt-5 border-t border-white/10">
+                    <h4 className="text-[10px] font-semibold uppercase tracking-wider text-slate-400 mb-3.5">
+                      Core Competencies
+                    </h4>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      {service.features.map((feature) => (
+                        <li
+                          key={feature}
+                          className="flex items-center gap-2 text-xs sm:text-sm text-slate-300"
+                        >
+                          <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                          <span className="truncate">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Bottom CTA Link */}
+                <div className="mt-6 pt-5 border-t border-white/5 flex items-center justify-between">
+                  <Link
+                    href={service.ctaLink}
+                    className="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 transition-all duration-200 active:scale-95 group/btn shadow-sm"
+                  >
+                    <span>{service.ctaText.replace(" →", "")}</span>
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
+                  </Link>
+
+                  <span className="text-[11px] text-slate-400 font-medium uppercase tracking-wider hidden sm:inline">
+                    Enterprise SLA
+                  </span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
