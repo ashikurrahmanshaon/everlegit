@@ -1,27 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <!-- Dark carbon background -->
-  <rect width="64" height="64" rx="14" fill="#090B10" />
-  <rect width="62" height="62" x="1" y="1" rx="13" stroke="#2563EB" stroke-opacity="0.3" stroke-width="1.5" />
-  
-  <!-- Architectural Monogram for Ever Legit: Interlocking E & L Prism -->
+  <!-- Precision Luxury Royal Blue Rounded Canvas -->
   <defs>
-    <linearGradient id="elGrad1" x1="12" y1="12" x2="52" y2="52" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="50%" stop-color="#60A5FA" />
-      <stop offset="100%" stop-color="#1D4ED8" />
+    <linearGradient id="faviconBg" x1="4" y1="4" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="60%" stop-color="#1D4ED8" />
+      <stop offset="100%" stop-color="#1E1B4B" />
     </linearGradient>
-    <linearGradient id="elGrad2" x1="52" y1="16" x2="16" y2="48" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#38BDF8" />
-      <stop offset="100%" stop-color="#2563EB" />
+    <linearGradient id="faviconGloss" x1="0" y1="0" x2="64" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
     </linearGradient>
   </defs>
 
-  <!-- Precision geometric interlocking EL crest -->
-  <!-- Top horizontal spine (E top bar) -->
-  <path d="M16 18H48V25H25V30H44V36H25V46H48V52H16V18Z" fill="url(#elGrad1)" />
-  <!-- Dynamic forward chevron / structural anchor (L base & accent cut) -->
-  <path d="M30 40L40 30H48L38 40H48V46H30V40Z" fill="url(#elGrad2)" opacity="0.9" />
-  
-  <!-- Subtle core pulse dot -->
-  <circle cx="48" cy="18" r="2.5" fill="#60A5FA" />
+  <!-- Background Base -->
+  <rect width="64" height="64" rx="16" fill="url(#faviconBg)" />
+  <rect width="64" height="64" rx="16" fill="url(#faviconGloss)" />
+  <rect width="62" height="62" x="1" y="1" rx="15" stroke="#93C5FD" stroke-opacity="0.35" stroke-width="1.5" />
+
+  <!-- Modern Architectural E & L Precision Monogram -->
+  <path
+    d="M14 12C14 9.79086 15.7909 8 18 8H46C48.2091 8 50 9.79086 50 12V16C50 18.2091 48.2091 20 46 20H28V26H40C42.2091 26 44 27.7909 44 30V34C44 36.2091 42.2091 38 40 38H28V44H46C48.2091 44 50 45.7909 50 48V52C50 54.2091 48.2091 56 46 56H18C15.7909 56 14 54.2091 14 52V12Z"
+    fill="#FFFFFF"
+  />
+
+  <!-- Forward Precision Cyan Accent Bar -->
+  <path
+    d="M40 26H50C52.2091 26 54 27.7909 54 30V34C54 36.2091 52.2091 38 50 38H40V26Z"
+    fill="#38BDF8"
+  />
 </svg>
