@@ -71,26 +71,26 @@ export default function ContactPage() {
   );
 
   return (
-    <div className="pt-28 pb-20 sm:pt-36 sm:pb-28 relative overflow-hidden bg-[#0b0f19] font-sans">
+    <div className="pt-28 pb-20 sm:pt-36 sm:pb-28 relative overflow-hidden bg-slate-50/70 font-sans border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Navigation Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs text-slate-400 mb-6">
-          <Link href="/" className="hover:text-blue-400 transition-colors">
+        <div className="flex items-center gap-2 text-xs text-slate-500 mb-6">
+          <Link href="/" className="hover:text-blue-600 transition-colors">
             Home
           </Link>
-          <span className="text-slate-600">/</span>
-          <span className="text-blue-400 font-semibold">Contact</span>
+          <span className="text-slate-400">/</span>
+          <span className="text-blue-700 font-bold">Contact</span>
         </div>
 
         {/* Page Header */}
         <div className="max-w-3xl space-y-3 mb-10">
-          <span className="text-xs font-semibold text-blue-400 uppercase tracking-wider block">
+          <span className="text-xs font-bold text-blue-700 uppercase tracking-wider block">
             Direct Communications
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-tight">
             Let's start a conversation.
           </h1>
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal pt-1">
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal pt-1">
             Whether you are launching a digital venture, expanding international trade sourcing, or seeking a reliable technology partner, we're here to help.
           </p>
         </div>
@@ -98,34 +98,34 @@ export default function ContactPage() {
         {/* Direct Action Cards: Phone, Email, & WhatsApp */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 max-w-5xl">
           {/* Phone Desk Card */}
-          <div className="p-4 sm:p-5 rounded-2xl bg-[#111726] border border-white/10 flex flex-col justify-between gap-4 shadow-sm">
+          <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between gap-4 shadow-sm">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center shrink-0">
                 <PhoneCall className="w-5 h-5" />
               </div>
               <div className="min-w-0">
-                <span className="text-[11px] text-slate-400 block font-medium">
+                <span className="text-[11px] text-slate-500 block font-medium">
                   Direct Voice
                 </span>
-                <span className="text-sm sm:text-base font-bold text-white truncate block">
+                <span className="text-sm sm:text-base font-bold text-slate-900 truncate block">
                   {COMPANY_CONTACT.phoneDisplay}
                 </span>
               </div>
             </div>
-            <div className="flex items-center gap-2 pt-1 border-t border-white/5">
+            <div className="flex items-center gap-2 pt-1 border-t border-slate-100">
               <a
                 href={`tel:${COMPANY_CONTACT.phoneRaw}`}
-                className="flex-1 text-center px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors"
+                className="flex-1 text-center px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs transition-colors"
               >
                 Call Now
               </a>
               <button
                 onClick={() => copyToClipboard(COMPANY_CONTACT.phoneRaw, "phone")}
-                className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors cursor-pointer"
+                className="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 transition-colors cursor-pointer"
                 title="Copy phone"
               >
                 {copiedType === "phone" ? (
-                  <Check className="w-4 h-4 text-emerald-400" />
+                  <Check className="w-4 h-4 text-emerald-600" />
                 ) : (
                   <Copy className="w-4 h-4" />
                 )}
@@ -134,34 +134,34 @@ export default function ContactPage() {
           </div>
 
           {/* Email Desk Card */}
-          <div className="p-4 sm:p-5 rounded-2xl bg-[#111726] border border-white/10 flex flex-col justify-between gap-4 shadow-sm">
+          <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between gap-4 shadow-sm">
             <div className="flex items-center gap-3 min-w-0">
-              <div className="w-10 h-10 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 text-indigo-600 flex items-center justify-center shrink-0">
                 <Mail className="w-5 h-5" />
               </div>
               <div className="min-w-0">
-                <span className="text-[11px] text-slate-400 block font-medium">
+                <span className="text-[11px] text-slate-500 block font-medium">
                   Official Inquiries
                 </span>
-                <span className="text-sm sm:text-base font-bold text-white truncate block">
+                <span className="text-sm sm:text-base font-bold text-slate-900 truncate block">
                   {COMPANY_CONTACT.email}
                 </span>
               </div>
             </div>
-            <div className="flex items-center gap-2 pt-1 border-t border-white/5">
+            <div className="flex items-center gap-2 pt-1 border-t border-slate-100">
               <a
                 href={`mailto:${COMPANY_CONTACT.email}`}
-                className="flex-1 text-center px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs transition-colors"
+                className="flex-1 text-center px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs transition-colors border border-slate-200"
               >
                 Send Email
               </a>
               <button
                 onClick={() => copyToClipboard(COMPANY_CONTACT.email, "email")}
-                className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors cursor-pointer"
+                className="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 transition-colors cursor-pointer"
                 title="Copy email"
               >
                 {copiedType === "email" ? (
-                  <Check className="w-4 h-4 text-emerald-400" />
+                  <Check className="w-4 h-4 text-emerald-600" />
                 ) : (
                   <Copy className="w-4 h-4" />
                 )}
@@ -170,26 +170,26 @@ export default function ContactPage() {
           </div>
 
           {/* WhatsApp / Rapid Message Card */}
-          <div className="p-4 sm:p-5 rounded-2xl bg-[#111726] border border-white/10 flex flex-col justify-between gap-4 shadow-sm">
+          <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between gap-4 shadow-sm">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
                 <MessageSquare className="w-5 h-5" />
               </div>
               <div className="min-w-0">
-                <span className="text-[11px] text-slate-400 block font-medium">
+                <span className="text-[11px] text-slate-500 block font-medium">
                   WhatsApp Direct
                 </span>
-                <span className="text-sm sm:text-base font-bold text-white truncate block">
+                <span className="text-sm sm:text-base font-bold text-slate-900 truncate block">
                   Instant Operations
                 </span>
               </div>
             </div>
-            <div className="flex items-center gap-2 pt-1 border-t border-white/5">
+            <div className="flex items-center gap-2 pt-1 border-t border-slate-100">
               <a
                 href={`https://wa.me/${COMPANY_CONTACT.phoneRaw.replace("+", "")}?text=Hello%20Ever%20Legit,%20I%20would%20like%20to%20discuss%20a%20project.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full text-center px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-colors"
+                className="w-full text-center px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs transition-colors shadow-xs"
               >
                 Open WhatsApp
               </a>
@@ -198,23 +198,23 @@ export default function ContactPage() {
         </div>
 
         {/* Project Estimator Callout Banner */}
-        <div className="mb-10 max-w-5xl p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-900/30 via-indigo-900/20 to-purple-900/30 border border-blue-500/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="mb-10 max-w-5xl p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-50 via-indigo-50/50 to-sky-50 border border-blue-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-blue-600/30 text-blue-300">
+            <div className="p-2.5 rounded-xl bg-blue-100 text-blue-700">
               <Calculator className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-white">
+              <h4 className="text-sm font-bold text-slate-900">
                 Need an immediate turnaround estimate or roadmap?
               </h4>
-              <p className="text-xs text-slate-300">
+              <p className="text-xs text-slate-600">
                 Configure your project specs in our interactive planner and transfer it directly into this form.
               </p>
             </div>
           </div>
           <Link
             href="/services#estimator"
-            className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shrink-0 transition-colors"
+            className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shrink-0 transition-colors shadow-xs"
           >
             Launch Scope Planner
           </Link>
@@ -224,15 +224,15 @@ export default function ContactPage() {
         <ContactForm />
 
         {/* Interactive Searchable FAQ Section */}
-        <div className="mt-20 pt-12 border-t border-white/10">
+        <div className="mt-20 pt-12 border-t border-slate-200">
           <div className="max-w-2xl mx-auto text-center space-y-2 mb-8">
-            <span className="text-xs font-semibold text-blue-400 uppercase tracking-wider block">
+            <span className="text-xs font-bold text-blue-700 uppercase tracking-wider block">
               Knowledge & FAQ
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
               Frequently Asked Questions
             </h2>
-            <p className="text-sm text-slate-300 font-normal">
+            <p className="text-sm text-slate-600 font-normal">
               Find immediate answers regarding our consultation process, privacy, and operating model.
             </p>
           </div>
@@ -245,7 +245,7 @@ export default function ContactPage() {
               placeholder="Search questions (e.g. NDA, response time, code ownership)..."
               value={faqSearch}
               onChange={(e) => setFaqSearch(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 transition-colors"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-slate-200 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 transition-colors shadow-xs"
             />
           </div>
 
@@ -259,30 +259,30 @@ export default function ContactPage() {
                   onClick={() => setExpandedFaq(isExpanded ? null : idx)}
                   className={`p-5 rounded-2xl border transition-all cursor-pointer select-none ${
                     isExpanded
-                      ? "bg-[#141b2e] border-blue-500/40 shadow-lg"
-                      : "bg-[#111726] border-white/10 hover:border-white/20"
+                      ? "bg-blue-50/70 border-blue-300 shadow-sm"
+                      : "bg-white border-slate-200 hover:border-slate-300 shadow-xs"
                   }`}
                 >
-                  <div className="flex items-start justify-between gap-3 text-white font-semibold text-sm">
+                  <div className="flex items-start justify-between gap-3 text-slate-900 font-bold text-sm">
                     <div className="flex items-center gap-2">
-                      <HelpCircle className="w-4 h-4 text-blue-400 shrink-0" />
+                      <HelpCircle className="w-4 h-4 text-blue-600 shrink-0" />
                       <span>{faq.q}</span>
                     </div>
                     <ChevronDown
                       className={`w-4 h-4 text-slate-400 shrink-0 transition-transform ${
-                        isExpanded ? "rotate-180 text-blue-400" : ""
+                        isExpanded ? "rotate-180 text-blue-600" : ""
                       }`}
                     />
                   </div>
                   <div
-                    className={`mt-2.5 text-xs text-slate-300 leading-relaxed pl-6 font-normal ${
-                      isExpanded ? "block" : "line-clamp-2 text-slate-400"
+                    className={`mt-2.5 text-xs text-slate-600 leading-relaxed pl-6 font-normal ${
+                      isExpanded ? "block" : "line-clamp-2 text-slate-500"
                     }`}
                   >
                     {faq.a}
                   </div>
                   <div className="mt-2 pl-6">
-                    <span className="text-[10px] px-2 py-0.5 rounded-md bg-white/5 text-blue-300 font-medium">
+                    <span className="text-[10px] px-2 py-0.5 rounded-md bg-blue-50 text-blue-700 font-semibold border border-blue-200">
                       {faq.category}
                     </span>
                   </div>

@@ -200,72 +200,72 @@ function ContactFormInner() {
         {/* Left Side: What to expect & Direct Channels */}
         <div className="lg:col-span-5 space-y-6">
           <div>
-            <span className="text-xs font-semibold text-blue-400 uppercase tracking-wider block mb-2">
+            <span className="text-xs font-bold text-blue-700 uppercase tracking-wider block mb-2">
               Direct Communications
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
               Executive Review Desk
             </h2>
-            <p className="mt-2 text-slate-300 text-sm leading-relaxed font-normal">
+            <p className="mt-2 text-slate-600 text-sm leading-relaxed font-normal">
               Every message and callback request is handled under a verified Non-Disclosure framework and evaluated directly by operational leads.
             </p>
           </div>
 
           {/* 3 Simple Steps */}
-          <div className="space-y-4 border-l border-white/10 pl-5 ml-1">
+          <div className="space-y-4 border-l border-slate-200 pl-5 ml-1">
             <div>
-              <h4 className="text-sm font-semibold text-white">
+              <h4 className="text-sm font-bold text-slate-900">
                 1. Initial Assessment
               </h4>
-              <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+              <p className="text-xs text-slate-600 mt-1 leading-relaxed">
                 We review technical feasibility, sourcing parameters, and project scope within 24 business hours.
               </p>
             </div>
 
             <div>
-              <h4 className="text-sm font-semibold text-white">
+              <h4 className="text-sm font-bold text-slate-900">
                 2. Direct Consultation Call
               </h4>
-              <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+              <p className="text-xs text-slate-600 mt-1 leading-relaxed">
                 A structured 20-minute executive briefing to align on deliverables, timelines, and milestones.
               </p>
             </div>
 
             <div>
-              <h4 className="text-sm font-semibold text-white">
+              <h4 className="text-sm font-bold text-slate-900">
                 3. Phased Implementation Plan
               </h4>
-              <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+              <p className="text-xs text-slate-600 mt-1 leading-relaxed">
                 A clear proposal with accountable milestones, transparent pricing, and deployment schedules.
               </p>
             </div>
           </div>
 
           {/* Direct Phone & Email Desks */}
-          <div className="pt-4 border-t border-white/10 space-y-3">
-            <span className="text-xs font-semibold text-slate-300 uppercase tracking-wider block">
+          <div className="pt-4 border-t border-slate-200 space-y-3">
+            <span className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
               Direct Contact Desks
             </span>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {/* Phone Desk */}
-              <div className="p-3.5 rounded-xl bg-[#111726] border border-white/10 flex items-center justify-between">
+              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
                 <div>
-                  <span className="text-[11px] text-slate-400 block">Direct Voice</span>
+                  <span className="text-[11px] text-slate-500 font-medium block">Direct Voice</span>
                   <a
                     href={`tel:${COMPANY_CONTACT.phoneRaw}`}
-                    className="text-xs font-semibold text-white hover:text-blue-400 transition-colors"
+                    className="text-xs font-bold text-slate-900 hover:text-blue-600 transition-colors"
                   >
                     {COMPANY_CONTACT.phoneDisplay}
                   </a>
                 </div>
                 <button
                   onClick={() => copyToClipboard(COMPANY_CONTACT.phoneRaw, "phone")}
-                  className="p-1.5 rounded text-slate-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+                  className="p-1.5 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-200 transition-colors cursor-pointer"
                   title="Copy Phone"
                 >
                   {copiedType === "phone" ? (
-                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                    <Check className="w-3.5 h-3.5 text-emerald-600" />
                   ) : (
                     <Copy className="w-3.5 h-3.5" />
                   )}
@@ -273,23 +273,23 @@ function ContactFormInner() {
               </div>
 
               {/* Email Desk */}
-              <div className="p-3.5 rounded-xl bg-[#111726] border border-white/10 flex items-center justify-between">
+              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
                 <div className="truncate mr-2">
-                  <span className="text-[11px] text-slate-400 block">Email Desk</span>
+                  <span className="text-[11px] text-slate-500 font-medium block">Email Desk</span>
                   <a
                     href={`mailto:${COMPANY_CONTACT.email}`}
-                    className="text-xs font-semibold text-white hover:text-blue-400 transition-colors truncate block"
+                    className="text-xs font-bold text-slate-900 hover:text-blue-600 transition-colors truncate block"
                   >
                     {COMPANY_CONTACT.email}
                   </a>
                 </div>
                 <button
                   onClick={() => copyToClipboard(COMPANY_CONTACT.email, "email")}
-                  className="p-1.5 rounded text-slate-400 hover:text-white hover:bg-white/10 transition-colors shrink-0 cursor-pointer"
+                  className="p-1.5 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-200 transition-colors shrink-0 cursor-pointer"
                   title="Copy Email"
                 >
                   {copiedType === "email" ? (
-                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                    <Check className="w-3.5 h-3.5 text-emerald-600" />
                   ) : (
                     <Copy className="w-3.5 h-3.5" />
                   )}
@@ -301,18 +301,18 @@ function ContactFormInner() {
 
         {/* Right Side: Tabbed Interactive Form */}
         <div className="lg:col-span-7">
-          <div className="p-6 sm:p-8 rounded-2xl bg-[#111726] border border-white/10 shadow-xl relative">
+          <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-md relative">
             
             {/* Form Mode Selector */}
-            <div className="flex items-center justify-between pb-5 mb-5 border-b border-white/10">
-              <div className="flex items-center gap-1.5 p-1 rounded-xl bg-white/[0.03] border border-white/5">
+            <div className="flex items-center justify-between pb-5 mb-5 border-b border-slate-100">
+              <div className="flex items-center gap-1.5 p-1 rounded-xl bg-slate-100 border border-slate-200">
                 <button
                   type="button"
                   onClick={() => setFormMode("brief")}
-                  className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                  className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
                     formMode === "brief"
-                      ? "bg-blue-600 text-white shadow-sm"
-                      : "text-slate-400 hover:text-white"
+                      ? "bg-white text-blue-700 shadow-xs"
+                      : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
                   Commercial Brief
@@ -320,10 +320,10 @@ function ContactFormInner() {
                 <button
                   type="button"
                   onClick={() => setFormMode("callback")}
-                  className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                  className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
                     formMode === "callback"
-                      ? "bg-blue-600 text-white shadow-sm"
-                      : "text-slate-400 hover:text-white"
+                      ? "bg-white text-blue-700 shadow-xs"
+                      : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
                   15-Min Express Callback
@@ -331,7 +331,7 @@ function ContactFormInner() {
               </div>
 
               {draftSaved && (
-                <span className="text-[10px] text-emerald-400 flex items-center gap-1 animate-fadeIn">
+                <span className="text-[10px] text-emerald-600 font-semibold flex items-center gap-1 animate-fadeIn">
                   <Check className="w-3 h-3" />
                   <span>Draft saved</span>
                 </span>
@@ -340,25 +340,25 @@ function ContactFormInner() {
 
             {isSubmitted ? (
               <div className="py-10 text-center space-y-4 animate-fadeIn">
-                <div className="w-14 h-14 rounded-full bg-emerald-500/15 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/30">
+                <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto border border-emerald-200">
                   <CheckCircle2 className="w-7 h-7" />
                 </div>
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white">
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
                     Inquiry Confirmed
                   </h3>
-                  <p className="text-xs text-blue-400 font-mono mt-1">
+                  <p className="text-xs text-blue-700 font-mono mt-1 font-bold">
                     Priority Tracking Reference: <strong>{refCode}</strong>
                   </p>
                 </div>
-                <p className="text-slate-300 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
-                  Thank you, <strong className="text-white">{formData.fullName}</strong>. We have received your inquiry regarding <strong className="text-blue-300">{formData.interest}</strong>. An operational lead will review and respond to <strong className="text-white">{formData.email || formData.phone}</strong> within 24 business hours.
+                <p className="text-slate-600 text-xs sm:text-sm max-w-md mx-auto leading-relaxed font-normal">
+                  Thank you, <strong className="text-slate-900">{formData.fullName}</strong>. We have received your inquiry regarding <strong className="text-blue-700">{formData.interest}</strong>. An operational lead will review and respond to <strong className="text-slate-900">{formData.email || formData.phone}</strong> within 24 business hours.
                 </p>
 
                 <div className="pt-4 flex items-center justify-center gap-3">
                   <button
                     onClick={resetForm}
-                    className="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-semibold transition-colors cursor-pointer"
+                    className="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold transition-colors cursor-pointer border border-slate-200"
                   >
                     Submit Another Inquiry
                   </button>
@@ -369,8 +369,8 @@ function ContactFormInner() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Full Name */}
                   <div className="space-y-1">
-                    <label className="text-xs font-medium text-slate-300">
-                      Your Full Name <span className="text-red-400">*</span>
+                    <label className="text-xs font-semibold text-slate-700">
+                      Your Full Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -379,22 +379,22 @@ function ContactFormInner() {
                       onChange={(e) =>
                         setFormData({ ...formData, fullName: e.target.value })
                       }
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-white/10 bg-white/[0.03] focus:border-blue-500 focus:outline-none text-white text-sm placeholder-slate-500 transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white focus:border-blue-500 focus:outline-none text-slate-900 text-sm placeholder-slate-400 transition-colors shadow-xs"
                       id="contact-full-name"
                     />
                     {errors.fullName && (
-                      <p className="text-xs text-red-400">{errors.fullName}</p>
+                      <p className="text-xs text-red-500 font-medium">{errors.fullName}</p>
                     )}
                   </div>
 
                   {/* Business / Company */}
                   <div className="space-y-1">
-                    <label className="text-xs font-medium text-slate-300">
+                    <label className="text-xs font-semibold text-slate-700">
                       Company / Organization{" "}
                       {formMode === "brief" ? (
-                        <span className="text-red-400">*</span>
+                        <span className="text-red-500">*</span>
                       ) : (
-                        <span className="text-slate-500">(Optional)</span>
+                        <span className="text-slate-400 font-normal">(Optional)</span>
                       )}
                     </label>
                     <input
@@ -404,11 +404,11 @@ function ContactFormInner() {
                       onChange={(e) =>
                         setFormData({ ...formData, company: e.target.value })
                       }
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-white/10 bg-white/[0.03] focus:border-blue-500 focus:outline-none text-white text-sm placeholder-slate-500 transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white focus:border-blue-500 focus:outline-none text-slate-900 text-sm placeholder-slate-400 transition-colors shadow-xs"
                       id="contact-company"
                     />
                     {errors.company && (
-                      <p className="text-xs text-red-400">{errors.company}</p>
+                      <p className="text-xs text-red-500 font-medium">{errors.company}</p>
                     )}
                   </div>
                 </div>
@@ -416,8 +416,8 @@ function ContactFormInner() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Email */}
                   <div className="space-y-1">
-                    <label className="text-xs font-medium text-slate-300">
-                      Email Address <span className="text-red-400">*</span>
+                    <label className="text-xs font-semibold text-slate-700">
+                      Email Address <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="email"
@@ -426,22 +426,22 @@ function ContactFormInner() {
                       onChange={(e) =>
                         setFormData({ ...formData, email: e.target.value })
                       }
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-white/10 bg-white/[0.03] focus:border-blue-500 focus:outline-none text-white text-sm placeholder-slate-500 transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white focus:border-blue-500 focus:outline-none text-slate-900 text-sm placeholder-slate-400 transition-colors shadow-xs"
                       id="contact-email"
                     />
                     {errors.email && (
-                      <p className="text-xs text-red-400">{errors.email}</p>
+                      <p className="text-xs text-red-500 font-medium">{errors.email}</p>
                     )}
                   </div>
 
                   {/* Phone */}
                   <div className="space-y-1">
-                    <label className="text-xs font-medium text-slate-300">
+                    <label className="text-xs font-semibold text-slate-700">
                       Phone Number{" "}
                       {formMode === "callback" ? (
-                        <span className="text-red-400">*</span>
+                        <span className="text-red-500">*</span>
                       ) : (
-                        <span className="text-slate-500">(For WhatsApp/Call)</span>
+                        <span className="text-slate-400 font-normal">(For WhatsApp/Call)</span>
                       )}
                     </label>
                     <input
@@ -451,7 +451,7 @@ function ContactFormInner() {
                       onChange={(e) =>
                         setFormData({ ...formData, phone: e.target.value })
                       }
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-white/10 bg-white/[0.03] focus:border-blue-500 focus:outline-none text-white text-sm placeholder-slate-500 transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white focus:border-blue-500 focus:outline-none text-slate-900 text-sm placeholder-slate-400 transition-colors shadow-xs"
                       id="contact-phone"
                     />
                   </div>
@@ -459,19 +459,19 @@ function ContactFormInner() {
 
                 {/* Interest Dropdown */}
                 <div className="space-y-1">
-                  <label className="text-xs font-medium text-slate-300">
-                    Discipline / Subject <span className="text-red-400">*</span>
+                  <label className="text-xs font-semibold text-slate-700">
+                    Discipline / Subject <span className="text-red-500">*</span>
                   </label>
                   <select
                     value={formData.interest}
                     onChange={(e) =>
                       setFormData({ ...formData, interest: e.target.value })
                     }
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-white/10 bg-[#0e1422] focus:border-blue-500 focus:outline-none text-white text-sm transition-colors cursor-pointer"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white focus:border-blue-500 focus:outline-none text-slate-900 text-sm transition-colors cursor-pointer shadow-xs"
                     id="contact-interest"
                   >
                     {interestOptions.map((opt) => (
-                      <option key={opt} value={opt} className="bg-[#0e1422] text-white">
+                      <option key={opt} value={opt} className="bg-white text-slate-900">
                         {opt}
                       </option>
                     ))}
@@ -484,7 +484,7 @@ function ContactFormInner() {
                     {/* Budget & Timeline Chips */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
                       <div className="space-y-1.5">
-                        <label className="text-xs font-medium text-slate-400">
+                        <label className="text-xs font-semibold text-slate-700">
                           Estimated Budget / Scale
                         </label>
                         <div className="grid grid-cols-2 gap-1.5">
@@ -493,10 +493,10 @@ function ContactFormInner() {
                               key={b}
                               type="button"
                               onClick={() => setFormData({ ...formData, budget: b })}
-                              className={`p-2 rounded-lg text-[11px] font-medium border text-left truncate transition-colors cursor-pointer ${
+                              className={`p-2 rounded-lg text-[11px] font-semibold border text-left truncate transition-colors cursor-pointer ${
                                 formData.budget === b
-                                  ? "bg-blue-600/20 border-blue-500 text-white"
-                                  : "bg-white/[0.02] border-white/5 text-slate-400 hover:text-slate-200"
+                                  ? "bg-blue-50 border-blue-500 text-blue-900 shadow-xs"
+                                  : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                               }`}
                             >
                               {b}
@@ -506,7 +506,7 @@ function ContactFormInner() {
                       </div>
 
                       <div className="space-y-1.5">
-                        <label className="text-xs font-medium text-slate-400">
+                        <label className="text-xs font-semibold text-slate-700">
                           Target Timeline
                         </label>
                         <div className="grid grid-cols-2 gap-1.5">
@@ -515,10 +515,10 @@ function ContactFormInner() {
                               key={t}
                               type="button"
                               onClick={() => setFormData({ ...formData, timeline: t })}
-                              className={`p-2 rounded-lg text-[11px] font-medium border text-left truncate transition-colors cursor-pointer ${
+                              className={`p-2 rounded-lg text-[11px] font-semibold border text-left truncate transition-colors cursor-pointer ${
                                 formData.timeline === t
-                                  ? "bg-blue-600/20 border-blue-500 text-white"
-                                  : "bg-white/[0.02] border-white/5 text-slate-400 hover:text-slate-200"
+                                  ? "bg-blue-50 border-blue-500 text-blue-900 shadow-xs"
+                                  : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                               }`}
                             >
                               {t}
@@ -530,8 +530,8 @@ function ContactFormInner() {
 
                     {/* Message Area */}
                     <div className="space-y-1">
-                      <label className="text-xs font-medium text-slate-300">
-                        Message / Project Scope <span className="text-red-400">*</span>
+                      <label className="text-xs font-semibold text-slate-700">
+                        Message / Project Scope <span className="text-red-500">*</span>
                       </label>
                       <textarea
                         rows={4}
@@ -540,11 +540,11 @@ function ContactFormInner() {
                         onChange={(e) =>
                           setFormData({ ...formData, message: e.target.value })
                         }
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-white/10 bg-white/[0.03] focus:border-blue-500 focus:outline-none text-white text-sm placeholder-slate-500 resize-none transition-colors"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white focus:border-blue-500 focus:outline-none text-slate-900 text-sm placeholder-slate-400 resize-none transition-colors shadow-xs"
                         id="contact-message"
                       />
                       {errors.message && (
-                        <p className="text-xs text-red-400">{errors.message}</p>
+                        <p className="text-xs text-red-500 font-medium">{errors.message}</p>
                       )}
                     </div>
                   </>
@@ -552,7 +552,7 @@ function ContactFormInner() {
                   /* Callback Mode */
                   <div className="space-y-3 pt-1 animate-fadeIn">
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-slate-300">
+                      <label className="text-xs font-semibold text-slate-700">
                         Preferred Callback Window
                       </label>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
@@ -567,10 +567,10 @@ function ContactFormInner() {
                             onClick={() =>
                               setFormData({ ...formData, preferredSlot: slot })
                             }
-                            className={`p-2.5 rounded-xl text-xs font-medium border text-center transition-colors cursor-pointer ${
+                            className={`p-2.5 rounded-xl text-xs font-semibold border text-center transition-colors cursor-pointer ${
                               formData.preferredSlot === slot
-                                ? "bg-blue-600/20 border-blue-500 text-white"
-                                : "bg-white/[0.02] border-white/5 text-slate-400 hover:text-slate-200"
+                                ? "bg-blue-50 border-blue-500 text-blue-900 shadow-xs"
+                                : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                             }`}
                           >
                             {slot}
@@ -580,7 +580,7 @@ function ContactFormInner() {
                     </div>
 
                     <div className="space-y-1">
-                      <label className="text-xs font-medium text-slate-300">
+                      <label className="text-xs font-semibold text-slate-700">
                         Quick Note / Context (Optional)
                       </label>
                       <input
@@ -590,7 +590,7 @@ function ContactFormInner() {
                         onChange={(e) =>
                           setFormData({ ...formData, message: e.target.value })
                         }
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-white/10 bg-white/[0.03] focus:border-blue-500 focus:outline-none text-white text-sm placeholder-slate-500 transition-colors"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white focus:border-blue-500 focus:outline-none text-slate-900 text-sm placeholder-slate-400 transition-colors shadow-xs"
                       />
                     </div>
                   </div>
@@ -608,19 +608,19 @@ function ContactFormInner() {
                           agreedToPrivacy: e.target.checked,
                         })
                       }
-                      className="mt-1 h-3.5 w-3.5 rounded border-white/20 bg-white/5 text-blue-600 focus:ring-0 cursor-pointer"
+                      className="mt-1 h-3.5 w-3.5 rounded border-slate-300 text-blue-600 focus:ring-0 cursor-pointer"
                       id="contact-privacy-check"
                     />
-                    <span className="text-xs text-slate-400 leading-normal">
+                    <span className="text-xs text-slate-600 leading-normal">
                       I agree to the processing of this communication in accordance with Ever Legit's{" "}
-                      <a href="/privacy" className="text-blue-400 hover:underline">
+                      <a href="/privacy" className="text-blue-600 hover:underline font-semibold">
                         Privacy Policy
                       </a>
                       .
                     </span>
                   </label>
                   {errors.agreedToPrivacy && (
-                    <p className="text-xs text-red-400 mt-1">{errors.agreedToPrivacy}</p>
+                    <p className="text-xs text-red-500 mt-1 font-medium">{errors.agreedToPrivacy}</p>
                   )}
                 </div>
 
@@ -629,7 +629,7 @@ function ContactFormInner() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md shadow-blue-900/30 active:scale-95 disabled:opacity-50"
+                    className="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm active:scale-95 disabled:opacity-50"
                     id="contact-submit-button"
                   >
                     {isSubmitting ? (

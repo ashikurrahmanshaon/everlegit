@@ -53,41 +53,41 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="pt-28 pb-20 sm:pt-36 sm:pb-28 relative overflow-hidden bg-[#0b0f19] font-sans">
+    <div className="pt-28 pb-20 sm:pt-36 sm:pb-28 relative overflow-hidden bg-slate-50/70 font-sans border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Navigation Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs text-slate-400 mb-6">
-          <Link href="/" className="hover:text-blue-400 transition-colors">
+        <div className="flex items-center gap-2 text-xs text-slate-500 mb-6">
+          <Link href="/" className="hover:text-blue-600 transition-colors">
             Home
           </Link>
-          <span className="text-slate-600">/</span>
-          <span className="text-blue-400 font-semibold">About</span>
+          <span className="text-slate-400">/</span>
+          <span className="text-blue-700 font-bold">About</span>
         </div>
 
         {/* Page Hero */}
         <div className="max-w-3xl space-y-3">
-          <span className="text-[11px] font-semibold text-blue-400 uppercase tracking-wider bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 inline-block">
+          <span className="text-[11px] font-bold text-blue-700 uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full border border-blue-200 inline-block shadow-xs">
             About Ever Legit Group
           </span>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-tight">
             Building Sustainable Commercial Ventures
           </h1>
-          <p className="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed font-normal pt-1">
+          <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed font-normal pt-1">
             Ever Legit is a private enterprise company focused on operating and supporting commercial ventures across international commerce, trade logistics, software engineering, and performance growth.
           </p>
         </div>
 
         {/* Operating Philosophy Quote Card */}
-        <div className="mt-10 sm:mt-14 p-6 sm:p-10 rounded-3xl bg-[#111726] border border-white/10 shadow-2xl shadow-black/40">
+        <div className="mt-10 sm:mt-14 p-6 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm">
           <div className="max-w-3xl space-y-3">
-            <span className="text-[11px] font-semibold text-blue-400 uppercase tracking-wider block">
+            <span className="text-[11px] font-bold text-blue-700 uppercase tracking-wider block">
               Core Strategic Approach
             </span>
-            <blockquote className="text-base sm:text-xl font-medium text-white leading-relaxed">
+            <blockquote className="text-base sm:text-xl font-medium text-slate-900 leading-relaxed">
               "Our approach is simple: identify high-potential commercial opportunities, build reliable technological solutions, and engineer resilient systems capable of growing across changing markets."
             </blockquote>
-            <p className="text-xs text-slate-400 pt-1">
+            <p className="text-xs text-slate-500 pt-1">
               Ever Legit Operating Governance & Strategic Philosophy
             </p>
           </div>
@@ -96,13 +96,13 @@ export default function AboutPage() {
         {/* Multi-Frontier Breakdown */}
         <div className="mt-16 sm:mt-20 space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <span className="text-[11px] font-semibold text-blue-400 uppercase tracking-wider block">
+            <span className="text-[11px] font-bold text-blue-700 uppercase tracking-wider block">
               Foundational Tenets
             </span>
-            <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 tracking-tight">
               The Architecture Behind Ever Legit
             </h2>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-normal">
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
               Instead of isolating capabilities into siloed teams, we align engineering, international trade, and growth under a single collaborative mindset.
             </p>
           </div>
@@ -113,22 +113,22 @@ export default function AboutPage() {
               return (
                 <div
                   key={idx}
-                  className="p-6 sm:p-7 rounded-2xl bg-[#111726] border border-white/10 hover:border-white/20 transition-all flex flex-col justify-between group shadow-sm hover:shadow-lg"
+                  className="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group shadow-xs"
                 >
                   <div>
-                    <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-300 group-hover:text-blue-400 group-hover:bg-blue-600/10 transition-colors">
+                    <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-700 group-hover:text-blue-600 group-hover:bg-blue-50 transition-colors">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="text-lg font-bold text-white mt-4 tracking-tight group-hover:text-blue-300 transition-colors">
+                    <h3 className="text-lg font-bold text-slate-900 mt-4 tracking-tight group-hover:text-blue-600 transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-2.5 font-normal">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-2.5 font-normal">
                       {item.desc}
                     </p>
                   </div>
-                  <div className="pt-4 mt-6 border-t border-white/5 text-xs text-slate-400 flex items-center justify-between">
+                  <div className="pt-4 mt-6 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between">
                     <span>{item.tag}</span>
-                    <span className="text-blue-400 font-medium">0{idx + 1}</span>
+                    <span className="text-blue-600 font-bold">0{idx + 1}</span>
                   </div>
                 </div>
               );
@@ -137,16 +137,16 @@ export default function AboutPage() {
         </div>
 
         {/* Operating Standards Checklist */}
-        <div className="mt-16 sm:mt-20 p-6 sm:p-10 rounded-3xl bg-[#111726] border border-white/10 shadow-xl">
+        <div className="mt-16 sm:mt-20 p-6 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-5 space-y-2.5">
-              <span className="text-[11px] font-semibold text-blue-400 uppercase tracking-wider block">
+              <span className="text-[11px] font-bold text-blue-700 uppercase tracking-wider block">
                 Operating Principles
               </span>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
                 Standards We Uphold
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                 How Ever Legit conducts business across ventures, client partnerships, and technology implementations.
               </p>
             </div>
@@ -162,9 +162,9 @@ export default function AboutPage() {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-2.5 p-3.5 rounded-xl bg-white/[0.02] border border-white/5 text-xs text-slate-300"
+                  className="flex items-start gap-2.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 font-medium"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <span>{item}</span>
                 </div>
               ))}
@@ -173,15 +173,15 @@ export default function AboutPage() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-16 sm:mt-20 p-6 sm:p-12 rounded-3xl bg-[#111726] border border-white/10 text-center space-y-4 shadow-2xl">
+        <div className="mt-16 sm:mt-20 p-6 sm:p-12 rounded-3xl bg-gradient-to-r from-blue-50 via-sky-50 to-indigo-50 border border-blue-200 text-center space-y-4 shadow-xs">
           <div className="max-w-xl mx-auto space-y-2">
-            <span className="text-[11px] font-semibold text-blue-400 uppercase tracking-wider">
+            <span className="text-[11px] font-bold text-blue-700 uppercase tracking-wider">
               Partnership Desk
             </span>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
               Ready to Explore Collaborative Opportunities?
             </h3>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-normal">
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
               Connect directly with our operational leadership via phone, email, or our contact form.
             </p>
           </div>
@@ -189,17 +189,17 @@ export default function AboutPage() {
           <div className="pt-3 flex flex-wrap items-center justify-center gap-3">
             <a
               href={`tel:${COMPANY_CONTACT.phoneRaw}`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold transition-all active:scale-95 shadow-md shadow-blue-900/30"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold transition-all active:scale-95 shadow-sm"
             >
               <PhoneCall className="w-3.5 h-3.5" />
               <span>Call: {COMPANY_CONTACT.phoneDisplay}</span>
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-semibold text-slate-200 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 transition-all active:scale-95"
+              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-semibold text-slate-700 hover:text-slate-900 bg-white hover:bg-slate-50 border border-slate-200 transition-all active:scale-95 shadow-xs"
             >
               <span>Contact Form</span>
-              <ArrowRight className="w-3.5 h-3.5 text-blue-400" />
+              <ArrowRight className="w-3.5 h-3.5 text-blue-600" />
             </Link>
           </div>
         </div>

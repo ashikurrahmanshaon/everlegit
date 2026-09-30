@@ -180,21 +180,21 @@ Direct inquiry via Ever Legit Commercial Desk.`;
   const IconComponent = currentSector.icon;
 
   return (
-    <div className="rounded-3xl bg-[#111726] border border-white/10 p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden font-sans" id="estimator">
+    <div className="rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 lg:p-10 shadow-sm relative overflow-hidden font-sans" id="estimator">
       {/* Background ambient light */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl pointer-events-none" />
 
       {/* Top Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-semibold border border-blue-500/20 mb-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold border border-blue-200 mb-2 shadow-xs">
             <Calculator className="w-3.5 h-3.5" />
             <span>Interactive Project Planner</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
             Scope & Turnaround Estimator
           </h2>
-          <p className="text-xs sm:text-sm text-slate-300 mt-1 font-normal">
+          <p className="text-xs sm:text-sm text-slate-600 mt-1 font-normal">
             Configure your commercial project requirements to generate an instant timeline and architecture blueprint.
           </p>
         </div>
@@ -206,7 +206,7 @@ Direct inquiry via Ever Legit Commercial Desk.`;
             setSelectedFeatures(["storefront", "multicurrency"]);
             setTimelineSpeed("standard");
           }}
-          className="self-start md:self-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 text-xs transition-colors"
+          className="self-start md:self-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors border border-slate-200"
           title="Reset configuration"
         >
           <RotateCcw className="w-3.5 h-3.5" />
@@ -219,7 +219,7 @@ Direct inquiry via Ever Legit Commercial Desk.`;
         <div className="lg:col-span-7 space-y-6">
           {/* Step 1: Sector Selection */}
           <div>
-            <label className="text-xs font-semibold uppercase tracking-wider text-slate-400 block mb-3">
+            <label className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-3">
               Step 1: Choose Operational Sector
             </label>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
@@ -232,16 +232,16 @@ Direct inquiry via Ever Legit Commercial Desk.`;
                     onClick={() => handleSectorChange(sector.id)}
                     className={`p-3 rounded-xl border text-left transition-all flex flex-col justify-between h-24 ${
                       isSelected
-                        ? "bg-blue-600/20 border-blue-500 text-white shadow-md shadow-blue-900/40"
-                        : "bg-white/[0.02] border-white/5 hover:border-white/15 text-slate-300"
+                        ? "bg-blue-50/90 border-blue-500 text-blue-950 shadow-sm ring-1 ring-blue-500/20"
+                        : "bg-slate-50 border-slate-200 hover:border-slate-300 hover:bg-slate-100 text-slate-700"
                     }`}
                   >
                     <SecIcon
                       className={`w-5 h-5 ${
-                        isSelected ? "text-blue-400" : "text-slate-400"
+                        isSelected ? "text-blue-600" : "text-slate-500"
                       }`}
                     />
-                    <span className="text-xs font-semibold leading-tight line-clamp-2">
+                    <span className="text-xs font-bold leading-tight line-clamp-2">
                       {sector.name}
                     </span>
                   </button>
@@ -252,7 +252,7 @@ Direct inquiry via Ever Legit Commercial Desk.`;
 
           {/* Step 2: Scale Tier Selection */}
           <div>
-            <label className="text-xs font-semibold uppercase tracking-wider text-slate-400 block mb-3">
+            <label className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-3">
               Step 2: Business Stage & Scale
             </label>
             <div className="grid grid-cols-3 gap-3">
@@ -266,12 +266,12 @@ Direct inquiry via Ever Legit Commercial Desk.`;
                   onClick={() => setScale(tier.id as any)}
                   className={`p-3 rounded-xl border text-left transition-all ${
                     scale === tier.id
-                      ? "bg-blue-600/20 border-blue-500 text-white"
-                      : "bg-white/[0.02] border-white/5 hover:border-white/15 text-slate-300"
+                      ? "bg-blue-50/90 border-blue-500 text-blue-950 shadow-sm ring-1 ring-blue-500/20"
+                      : "bg-slate-50 border-slate-200 hover:border-slate-300 hover:bg-slate-100 text-slate-700"
                   }`}
                 >
                   <div className="text-xs font-bold">{tier.title}</div>
-                  <div className="text-[10px] text-slate-400 mt-0.5">{tier.sub}</div>
+                  <div className="text-[10px] text-slate-500 mt-0.5">{tier.sub}</div>
                 </button>
               ))}
             </div>
@@ -280,10 +280,10 @@ Direct inquiry via Ever Legit Commercial Desk.`;
           {/* Step 3: Feature Checklist */}
           <div>
             <div className="flex items-center justify-between mb-3">
-              <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+              <label className="text-xs font-bold uppercase tracking-wider text-slate-500">
                 Step 3: Select Capabilities ({selectedFeatures.length} Active)
               </label>
-              <span className="text-[11px] text-blue-400">Click to add/remove</span>
+              <span className="text-[11px] text-blue-600 font-semibold">Click to add/remove</span>
             </div>
             <div className="space-y-2">
               {currentSector.features.map((feat) => {
@@ -294,25 +294,25 @@ Direct inquiry via Ever Legit Commercial Desk.`;
                     onClick={() => toggleFeature(feat.id)}
                     className={`flex items-center justify-between p-3 rounded-xl border cursor-pointer select-none transition-all ${
                       isChecked
-                        ? "bg-[#182035] border-blue-500/50 text-white"
-                        : "bg-white/[0.02] border-white/5 hover:bg-white/[0.04] text-slate-400"
+                        ? "bg-blue-50/70 border-blue-300 text-slate-900 shadow-xs"
+                        : "bg-slate-50/80 border-slate-200 hover:bg-slate-100 text-slate-600"
                     }`}
                   >
                     <div className="flex items-center gap-3 min-w-0 pr-2">
                       <div
                         className={`w-5 h-5 rounded-md flex items-center justify-center shrink-0 border ${
                           isChecked
-                            ? "bg-blue-600 border-blue-500 text-white"
-                            : "border-white/20 bg-white/5"
+                            ? "bg-blue-600 border-blue-600 text-white"
+                            : "border-slate-300 bg-white"
                         }`}
                       >
                         {isChecked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                       </div>
-                      <span className="text-xs font-medium text-slate-200 truncate">
+                      <span className="text-xs font-semibold text-slate-800 truncate">
                         {feat.label}
                       </span>
                     </div>
-                    <span className="text-[11px] text-slate-400 shrink-0 font-mono">
+                    <span className="text-[11px] text-slate-500 shrink-0 font-mono font-medium">
                       ~{feat.estDays}d
                     </span>
                   </div>
@@ -323,7 +323,7 @@ Direct inquiry via Ever Legit Commercial Desk.`;
 
           {/* Step 4: Pace Selection */}
           <div>
-            <label className="text-xs font-semibold uppercase tracking-wider text-slate-400 block mb-2.5">
+            <label className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-2.5">
               Step 4: Target Execution Pace
             </label>
             <div className="flex items-center gap-3">
@@ -331,8 +331,8 @@ Direct inquiry via Ever Legit Commercial Desk.`;
                 onClick={() => setTimelineSpeed("standard")}
                 className={`flex-1 p-2.5 rounded-xl border text-center text-xs font-semibold transition-all ${
                   timelineSpeed === "standard"
-                    ? "bg-blue-600 text-white border-blue-500 shadow-md"
-                    : "bg-white/[0.02] border-white/10 text-slate-300"
+                    ? "bg-blue-600 text-white border-blue-600 shadow-sm"
+                    : "bg-slate-100 border-slate-200 text-slate-700 hover:bg-slate-200"
                 }`}
               >
                 Standard Milestones (Phased)
@@ -341,8 +341,8 @@ Direct inquiry via Ever Legit Commercial Desk.`;
                 onClick={() => setTimelineSpeed("accelerated")}
                 className={`flex-1 p-2.5 rounded-xl border text-center text-xs font-semibold transition-all flex items-center justify-center gap-1.5 ${
                   timelineSpeed === "accelerated"
-                    ? "bg-blue-600 text-white border-blue-500 shadow-md"
-                    : "bg-white/[0.02] border-white/10 text-slate-300"
+                    ? "bg-blue-600 text-white border-blue-600 shadow-sm"
+                    : "bg-slate-100 border-slate-200 text-slate-700 hover:bg-slate-200"
                 }`}
               >
                 <Sparkles className="w-3.5 h-3.5 text-amber-300" />
@@ -354,80 +354,80 @@ Direct inquiry via Ever Legit Commercial Desk.`;
 
         {/* Right Column: Live Calculated Blueprint Card */}
         <div className="lg:col-span-5">
-          <div className="p-6 sm:p-7 rounded-2xl bg-[#0c101c] border border-blue-500/30 shadow-2xl space-y-6 relative">
-            <div className="flex items-center justify-between pb-4 border-b border-white/10">
+          <div className="p-6 sm:p-7 rounded-2xl bg-white border border-blue-200 shadow-md space-y-6 relative">
+            <div className="flex items-center justify-between pb-4 border-b border-slate-100">
               <div className="flex items-center gap-2.5">
-                <div className="p-2 rounded-lg bg-blue-600/20 text-blue-400">
+                <div className="p-2 rounded-lg bg-blue-50 text-blue-600 border border-blue-100">
                   <IconComponent className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-[10px] uppercase font-semibold text-blue-400">
+                  <div className="text-[10px] uppercase font-bold text-blue-700">
                     Live Scope Output
                   </div>
-                  <div className="text-sm font-bold text-white">
+                  <div className="text-sm font-bold text-slate-900">
                     {currentSector.name}
                   </div>
                 </div>
               </div>
 
-              <span className="text-[11px] px-2.5 py-1 rounded-full bg-white/10 text-slate-300 font-semibold border border-white/10">
+              <span className="text-[11px] px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 font-semibold border border-slate-200">
                 {calculation.tierLabel}
               </span>
             </div>
 
             {/* Calculated Turnaround Metric Display */}
-            <div className="grid grid-cols-2 gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/10">
+            <div className="grid grid-cols-2 gap-3 p-4 rounded-xl bg-slate-50 border border-slate-200">
               <div>
-                <span className="text-[11px] text-slate-400 block">
+                <span className="text-[11px] text-slate-500 font-medium block">
                   Est. Delivery Time
                 </span>
-                <span className="text-2xl sm:text-3xl font-extrabold text-white">
+                <span className="text-2xl sm:text-3xl font-extrabold text-slate-900">
                   ~{calculation.estimatedWeeks}{" "}
-                  <span className="text-xs font-medium text-slate-400">Weeks</span>
+                  <span className="text-xs font-medium text-slate-500">Weeks</span>
                 </span>
               </div>
               <div>
-                <span className="text-[11px] text-slate-400 block">
+                <span className="text-[11px] text-slate-500 font-medium block">
                   Active Features
                 </span>
-                <span className="text-2xl sm:text-3xl font-extrabold text-blue-400">
+                <span className="text-2xl sm:text-3xl font-extrabold text-blue-600">
                   {calculation.featureCount}{" "}
-                  <span className="text-xs font-medium text-slate-400">Modules</span>
+                  <span className="text-xs font-medium text-slate-500">Modules</span>
                 </span>
               </div>
             </div>
 
             {/* Phased Roadmap Timeline */}
             <div className="space-y-3">
-              <span className="text-[11px] font-semibold text-slate-300 uppercase tracking-wider block">
+              <span className="text-[11px] font-bold text-slate-700 uppercase tracking-wider block">
                 Phased Implementation Blueprint
               </span>
-              <div className="space-y-2.5 text-xs text-slate-300">
+              <div className="space-y-2.5 text-xs text-slate-600">
                 <div className="flex items-start gap-2.5">
-                  <div className="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0 text-[10px] font-bold mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 text-[10px] font-bold mt-0.5">
                     1
                   </div>
                   <div>
-                    <span className="font-semibold text-white">Architecture & Discovery</span>
-                    <p className="text-[11px] text-slate-400">Scope alignment, API/logistics mapping & design sign-off.</p>
+                    <span className="font-bold text-slate-900">Architecture & Discovery</span>
+                    <p className="text-[11px] text-slate-500">Scope alignment, API/logistics mapping & design sign-off.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2.5">
-                  <div className="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0 text-[10px] font-bold mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 text-[10px] font-bold mt-0.5">
                     2
                   </div>
                   <div>
-                    <span className="font-semibold text-white">Engineering & Operational Pipeline</span>
-                    <p className="text-[11px] text-slate-400">Core software build, factory vetting, or ad funnel setup.</p>
+                    <span className="font-bold text-slate-900">Engineering & Operational Pipeline</span>
+                    <p className="text-[11px] text-slate-500">Core software build, factory vetting, or ad funnel setup.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2.5">
-                  <div className="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0 text-[10px] font-bold mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 text-[10px] font-bold mt-0.5">
                     3
                   </div>
                   <div>
-                    <span className="font-semibold text-white">Validation & Deployment</span>
-                    <p className="text-[11px] text-slate-400">Stress testing, compliance review, and live launch handover.</p>
+                    <span className="font-bold text-slate-900">Validation & Deployment</span>
+                    <p className="text-[11px] text-slate-500">Stress testing, compliance review, and live launch handover.</p>
                   </div>
                 </div>
               </div>
@@ -437,7 +437,7 @@ Direct inquiry via Ever Legit Commercial Desk.`;
             <div className="pt-2 space-y-2.5">
               <button
                 onClick={transferToContact}
-                className="w-full py-3.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-md shadow-blue-900/30 active:scale-95"
+                className="w-full py-3.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-sm active:scale-95 cursor-pointer"
               >
                 <span>Transfer Scope to Consultation Form</span>
                 <ArrowRight className="w-4 h-4" />
@@ -445,24 +445,24 @@ Direct inquiry via Ever Legit Commercial Desk.`;
 
               <button
                 onClick={copySummary}
-                className="w-full py-2.5 px-4 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white text-xs font-medium border border-white/10 flex items-center justify-center gap-2 transition-colors"
+                className="w-full py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 text-xs font-semibold border border-slate-200 flex items-center justify-center gap-2 transition-colors cursor-pointer"
               >
                 {copied ? (
                   <>
-                    <Check className="w-4 h-4 text-emerald-400" />
-                    <span className="text-emerald-300">Scope Copied to Clipboard</span>
+                    <Check className="w-4 h-4 text-emerald-600" />
+                    <span className="text-emerald-700">Scope Copied to Clipboard</span>
                   </>
                 ) : (
                   <>
-                    <Copy className="w-4 h-4 text-slate-400" />
+                    <Copy className="w-4 h-4 text-slate-500" />
                     <span>Copy Structured Scope Summary</span>
                   </>
                 )}
               </button>
             </div>
 
-            <div className="text-[11px] text-slate-400 text-center flex items-center justify-center gap-1.5 pt-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />
+            <div className="text-[11px] text-slate-500 text-center flex items-center justify-center gap-1.5 pt-1">
+              <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
               <span>Direct review by Ever Legit strategic desk within 24h</span>
             </div>
           </div>

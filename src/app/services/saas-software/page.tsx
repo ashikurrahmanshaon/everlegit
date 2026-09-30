@@ -17,14 +17,6 @@ import {
 import { COMPANY_CONTACT } from "@/data/siteData";
 
 export default function SaasSoftwarePage() {
-  const [copiedType, setCopiedType] = useState<string | null>(null);
-
-  const copyToClipboard = (text: string, type: string) => {
-    navigator.clipboard.writeText(text);
-    setCopiedType(type);
-    setTimeout(() => setCopiedType(null), 2000);
-  };
-
   const stacks = [
     {
       title: "Cloud SaaS Platforms",
@@ -45,30 +37,30 @@ export default function SaasSoftwarePage() {
   ];
 
   return (
-    <div className="pt-28 pb-20 sm:pt-36 sm:pb-28 relative overflow-hidden bg-[#0b0f19] font-sans">
+    <div className="pt-28 pb-20 sm:pt-36 sm:pb-28 relative overflow-hidden bg-slate-50/70 border-b border-slate-200 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs text-slate-400 mb-6">
-          <Link href="/services" className="hover:text-blue-400 transition-colors">
+        <div className="flex items-center gap-2 text-xs text-slate-500 mb-6">
+          <Link href="/services" className="hover:text-blue-600 transition-colors">
             Services
           </Link>
-          <span className="text-slate-600">/</span>
-          <span className="text-indigo-400 font-semibold">SaaS & Software</span>
+          <span className="text-slate-300">/</span>
+          <span className="text-blue-600 font-semibold">SaaS & Software</span>
         </div>
 
         {/* Hero */}
         <div className="max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs font-semibold text-indigo-400">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-semibold text-blue-700">
             <span>Software Development & SaaS</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-tight">
             Designing and Developing{" "}
-            <span className="text-indigo-400">Modern Software Products.</span>
+            <span className="text-blue-600">Modern Software Products.</span>
           </h1>
 
-          <p className="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed font-normal pt-1">
+          <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed font-normal pt-1">
             We turn complex business challenges into intuitive digital products. From web applications to mission-critical SaaS platforms, our engineering focuses on speed, security, and clean maintainability.
           </p>
 
@@ -76,16 +68,16 @@ export default function SaasSoftwarePage() {
           <div className="pt-3 flex flex-wrap items-center gap-3">
             <a
               href={`tel:${COMPANY_CONTACT.phoneRaw}`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-xs font-semibold text-white transition-all active:scale-95 shadow-md shadow-blue-900/30"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-xs font-semibold text-white transition-all active:scale-95 shadow-md shadow-blue-500/20"
             >
               <PhoneCall className="w-3.5 h-3.5" />
               <span>Call: {COMPANY_CONTACT.phoneDisplay}</span>
             </a>
             <a
               href={`mailto:${COMPANY_CONTACT.email}`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-xs font-semibold text-slate-200 hover:text-white border border-white/10 transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700 hover:text-slate-900 border border-slate-200 transition-colors shadow-sm"
             >
-              <Mail className="w-3.5 h-3.5 text-indigo-400" />
+              <Mail className="w-3.5 h-3.5 text-blue-600" />
               <span>{COMPANY_CONTACT.email}</span>
             </a>
           </div>
@@ -96,37 +88,37 @@ export default function SaasSoftwarePage() {
           {stacks.map((item, idx) => (
             <div
               key={idx}
-              className="p-6 sm:p-7 rounded-2xl bg-[#111726] border border-white/10 hover:border-white/20 transition-all flex flex-col justify-between group shadow-sm hover:shadow-lg"
+              className="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all flex flex-col justify-between group shadow-sm"
             >
               <div>
-                <div className="w-9 h-9 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold text-xs mb-3.5">
+                <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 flex items-center justify-center font-bold text-xs mb-3.5">
                   0{idx + 1}
                 </div>
-                <h3 className="text-lg font-bold text-white tracking-tight group-hover:text-indigo-300 transition-colors">
+                <h3 className="text-lg font-bold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-2 font-normal">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-2 font-normal">
                   {item.desc}
                 </p>
               </div>
-              <div className="pt-4 mt-5 border-t border-white/5 text-xs text-slate-400 flex items-center justify-between">
+              <div className="pt-4 mt-5 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between">
                 <span>Architecture</span>
-                <span className="text-indigo-400 font-medium">Cloud Native</span>
+                <span className="text-blue-600 font-medium">Cloud Native</span>
               </div>
             </div>
           ))}
         </div>
 
         {/* Architecture Principles */}
-        <div className="mt-14 p-6 sm:p-10 rounded-3xl bg-[#111726] border border-white/10 space-y-6 shadow-xl">
+        <div className="mt-14 p-6 sm:p-10 rounded-3xl bg-white border border-slate-200 space-y-6 shadow-sm">
           <div className="max-w-2xl space-y-1.5">
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-indigo-400">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-blue-600">
               Technical Principles
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
               Software Architecture Built to Last
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
               Writing maintainable, well-documented code that provides lasting operational leverage.
             </p>
           </div>
@@ -148,28 +140,28 @@ export default function SaasSoftwarePage() {
             ].map((p, idx) => (
               <div
                 key={idx}
-                className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2"
+                className="p-5 rounded-2xl bg-slate-50/80 border border-slate-200/80 space-y-2"
               >
-                <div className="flex items-center gap-2 text-indigo-400">
+                <div className="flex items-center gap-2 text-blue-600">
                   <CheckCircle2 className="w-4 h-4" />
-                  <span className="text-xs font-bold">{p.title}</span>
+                  <span className="text-xs font-bold text-slate-900">{p.title}</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed font-normal">{p.text}</p>
+                <p className="text-xs text-slate-600 leading-relaxed font-normal">{p.text}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* CTA Desk */}
-        <div className="mt-14 p-6 sm:p-12 rounded-3xl bg-[#111726] border border-white/10 text-center space-y-5 shadow-2xl">
+        <div className="mt-14 p-6 sm:p-12 rounded-3xl bg-gradient-to-r from-blue-50/80 via-sky-50/50 to-indigo-50/70 border border-blue-200/70 text-center space-y-5 shadow-sm">
           <div className="max-w-xl mx-auto space-y-2">
-            <span className="text-[11px] font-semibold text-indigo-400 uppercase tracking-wider">
+            <span className="text-[11px] font-semibold text-blue-700 uppercase tracking-wider">
               Engineering Desk
             </span>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
               Have a Software Product in Mind?
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
               Schedule a technical consultation to discuss architecture choices, MVP timelines, or custom internal tooling.
             </p>
           </div>
@@ -177,7 +169,7 @@ export default function SaasSoftwarePage() {
           <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
             <a
               href={`tel:${COMPANY_CONTACT.phoneRaw}`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-xs font-semibold text-white transition-all active:scale-95 shadow-md shadow-blue-900/30"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-xs font-semibold text-white transition-all active:scale-95 shadow-md shadow-blue-500/20"
             >
               <PhoneCall className="w-3.5 h-3.5" />
               <span>Call: {COMPANY_CONTACT.phoneDisplay}</span>
@@ -185,10 +177,10 @@ export default function SaasSoftwarePage() {
 
             <Link
               href="/contact"
-              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-semibold text-slate-200 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 transition-all active:scale-95"
+              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-semibold text-slate-700 hover:text-slate-900 bg-white hover:bg-slate-50 border border-slate-200 transition-all active:scale-95 shadow-sm"
             >
               <span>Submit Technical RFP</span>
-              <ArrowRight className="w-3.5 h-3.5 text-indigo-400" />
+              <ArrowRight className="w-3.5 h-3.5 text-blue-600" />
             </Link>
           </div>
         </div>

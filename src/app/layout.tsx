@@ -14,7 +14,7 @@ const inter = Inter({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0b0f19",
+  themeColor: "#f8fafc",
   width: "device-width",
   initialScale: 1,
 };
@@ -78,7 +78,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-[#0b0f19] text-slate-100 font-sans selection:bg-blue-600/30 selection:text-white">
+      <body className="min-h-full flex flex-col bg-[#f8fafc] text-slate-900 font-sans selection:bg-blue-600 selection:text-white">
         <ScrollUtilities />
         <Header />
         <main className="flex-1">{children}</main>

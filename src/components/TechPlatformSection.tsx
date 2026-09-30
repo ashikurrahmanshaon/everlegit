@@ -102,64 +102,64 @@ export default function TechPlatformSection() {
   const current = tabData[activeTab];
 
   return (
-    <section className="py-20 sm:py-28 bg-[#0b0f19] border-t border-b border-white/[0.06] font-sans">
+    <section className="py-20 sm:py-28 bg-white border-t border-b border-slate-200/80 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-3">
-          <span className="text-[11px] font-semibold uppercase tracking-wider text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 inline-block">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3.5 py-1 rounded-full border border-blue-200/60 inline-block">
             Technology & Platforms
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
             Turning Complex Workflows Into Simple Software
           </h2>
-          <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
             We design and engineer cloud digital systems that make businesses faster, smarter, and simpler to scale.
           </p>
         </div>
 
-        {/* Dashboard Preview Container */}
-        <div className="mt-12 sm:mt-16 max-w-5xl mx-auto rounded-2xl border border-white/10 bg-[#111726] shadow-2xl shadow-black/60 overflow-hidden">
+        {/* Dashboard Preview Container (Light Enterprise Console) */}
+        <div className="mt-12 sm:mt-16 max-w-5xl mx-auto rounded-3xl border border-slate-200 bg-white shadow-xl overflow-hidden">
           
           {/* Header Bar with Tabs */}
-          <div className="px-5 py-4 border-b border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-[#0e1422]">
+          <div className="px-5 py-4 border-b border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-slate-50">
             <div className="flex items-center gap-2.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse" />
-              <span className="font-bold text-white text-sm">
+              <span className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse" />
+              <span className="font-bold text-slate-900 text-sm">
                 Ever Legit Operational Suite
               </span>
-              <span className="text-slate-500 text-xs hidden sm:inline">•</span>
-              <span className="text-slate-400 text-xs hidden sm:inline">Live Telemetry</span>
+              <span className="text-slate-300 text-xs hidden sm:inline">•</span>
+              <span className="text-slate-500 text-xs hidden sm:inline font-mono">Live Telemetry</span>
             </div>
 
-            {/* View Switcher Tabs (Touch-Friendly) */}
-            <div className="flex items-center bg-white/[0.04] p-1 rounded-xl border border-white/10 text-xs font-medium w-full sm:w-auto justify-between sm:justify-start">
+            {/* View Switcher Tabs */}
+            <div className="flex items-center bg-slate-200/70 p-1 rounded-xl border border-slate-200 text-xs font-semibold w-full sm:w-auto justify-between sm:justify-start">
               <button
                 onClick={() => setActiveTab("performance")}
-                className={`flex-1 sm:flex-initial px-3.5 py-1.5 rounded-lg transition-all ${
+                className={`flex-1 sm:flex-initial px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${
                   activeTab === "performance"
-                    ? "bg-blue-600 text-white font-semibold shadow-sm"
-                    : "text-slate-400 hover:text-white"
+                    ? "bg-white text-blue-600 font-bold shadow-sm"
+                    : "text-slate-600 hover:text-slate-900"
                 }`}
               >
                 Performance
               </button>
               <button
                 onClick={() => setActiveTab("orders")}
-                className={`flex-1 sm:flex-initial px-3.5 py-1.5 rounded-lg transition-all ${
+                className={`flex-1 sm:flex-initial px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${
                   activeTab === "orders"
-                    ? "bg-blue-600 text-white font-semibold shadow-sm"
-                    : "text-slate-400 hover:text-white"
+                    ? "bg-white text-blue-600 font-bold shadow-sm"
+                    : "text-slate-600 hover:text-slate-900"
                 }`}
               >
                 Orders & Flow
               </button>
               <button
                 onClick={() => setActiveTab("infrastructure")}
-                className={`flex-1 sm:flex-initial px-3.5 py-1.5 rounded-lg transition-all ${
+                className={`flex-1 sm:flex-initial px-3.5 py-1.5 rounded-lg transition-all cursor-pointer ${
                   activeTab === "infrastructure"
-                    ? "bg-blue-600 text-white font-semibold shadow-sm"
-                    : "text-slate-400 hover:text-white"
+                    ? "bg-white text-blue-600 font-bold shadow-sm"
+                    : "text-slate-600 hover:text-slate-900"
                 }`}
               >
                 Systems
@@ -168,19 +168,19 @@ export default function TechPlatformSection() {
           </div>
 
           {/* Metric Cards Row */}
-          <div className="p-4 sm:p-6 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 bg-[#0d1220]">
+          <div className="p-4 sm:p-6 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 bg-[#f8fafc]">
             {current.metrics.map((m, idx) => (
               <div
                 key={idx}
-                className="bg-[#111726] border border-white/10 rounded-xl p-3.5 sm:p-4 space-y-1 transition-all"
+                className="bg-white border border-slate-200 rounded-2xl p-4 space-y-1 shadow-sm transition-all"
               >
-                <div className="flex items-center justify-between text-[11px] sm:text-xs text-slate-400">
-                  <span className="truncate">{m.label}</span>
-                  <span className="text-emerald-400 font-semibold text-[11px] flex items-center shrink-0">
+                <div className="flex items-center justify-between text-[11px] sm:text-xs text-slate-500">
+                  <span className="truncate font-medium">{m.label}</span>
+                  <span className="text-emerald-600 font-bold text-[11px] flex items-center shrink-0">
                     {m.change}
                   </span>
                 </div>
-                <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                <div className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
                   {m.value}
                 </div>
                 <div className="text-[10px] sm:text-xs text-slate-400 truncate">
@@ -191,70 +191,70 @@ export default function TechPlatformSection() {
           </div>
 
           {/* Interactive Visual Area (Chart + Log) */}
-          <div className="p-4 sm:p-6 border-t border-white/10 grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6">
+          <div className="p-4 sm:p-6 border-t border-slate-200 grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 bg-white">
             
             {/* Chart Area */}
-            <div className="lg:col-span-2 bg-[#0e1422] border border-white/10 rounded-xl p-4 sm:p-5 flex flex-col justify-between">
+            <div className="lg:col-span-2 bg-[#f8fafc] border border-slate-200 rounded-2xl p-4 sm:p-5 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <h4 className="text-sm font-bold text-white">
+                  <h4 className="text-sm font-bold text-slate-900">
                     {current.title}
                   </h4>
-                  <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">
                     Active
                   </span>
                 </div>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-slate-500">
                   {current.subtitle}
                 </p>
               </div>
 
               {/* Chart Visual Simulation */}
-              <div className="h-36 sm:h-44 flex items-end gap-2 sm:gap-3 pt-6 pb-2 px-1 border-b border-white/5">
+              <div className="h-36 sm:h-44 flex items-end gap-2 sm:gap-3 pt-6 pb-2 px-1 border-b border-slate-200">
                 {current.chart.map((item, idx) => (
                   <div
                     key={idx}
                     className="flex-1 flex flex-col items-center gap-1.5 group relative"
                   >
                     <div
-                      className="w-full rounded-t transition-all duration-300 bg-blue-600/30 group-hover:bg-blue-500"
+                      className="w-full rounded-t transition-all duration-300 bg-blue-600/30 group-hover:bg-blue-600"
                       style={{ height: item.h }}
                     />
-                    <span className="text-[10px] sm:text-xs text-slate-400 font-medium">
+                    <span className="text-[10px] sm:text-xs text-slate-500 font-medium">
                       {item.label}
                     </span>
                   </div>
                 ))}
               </div>
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between text-[11px] text-slate-400 pt-3 gap-1">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between text-[11px] text-slate-500 pt-3 gap-1">
                 <span>{current.footerLeft}</span>
-                <span className="text-blue-400 font-medium">{current.footerRight}</span>
+                <span className="text-blue-600 font-semibold">{current.footerRight}</span>
               </div>
             </div>
 
             {/* Operational Event Feed */}
-            <div className="bg-[#0e1422] border border-white/10 rounded-xl p-4 sm:p-5 flex flex-col justify-between">
+            <div className="bg-[#f8fafc] border border-slate-200 rounded-2xl p-4 sm:p-5 flex flex-col justify-between">
               <div>
-                <h4 className="text-sm font-bold text-white mb-3 flex items-center justify-between">
+                <h4 className="text-sm font-bold text-slate-900 mb-3 flex items-center justify-between">
                   <span>Recent Events</span>
-                  <Activity className="w-3.5 h-3.5 text-blue-400" />
+                  <Activity className="w-3.5 h-3.5 text-blue-600" />
                 </h4>
                 <div className="space-y-2">
                   {current.logs.map((log, idx) => (
                     <div
                       key={idx}
-                      className="p-2.5 rounded-lg bg-white/[0.02] border border-white/5 flex items-center justify-between text-xs"
+                      className="p-2.5 rounded-xl bg-white border border-slate-200 flex items-center justify-between text-xs shadow-sm"
                     >
                       <div className="space-y-0.5 min-w-0 pr-2">
-                        <div className="text-slate-200 font-medium truncate text-xs">
+                        <div className="text-slate-800 font-semibold truncate text-xs">
                           {log.event}
                         </div>
                         <div className="text-[10px] text-slate-400">
                           {log.time}
                         </div>
                       </div>
-                      <span className="text-[10px] px-2 py-0.5 rounded font-semibold bg-blue-500/10 text-blue-300 shrink-0">
+                      <span className="text-[10px] px-2 py-0.5 rounded font-bold bg-blue-50 text-blue-700 border border-blue-100 shrink-0">
                         {log.status}
                       </span>
                     </div>
@@ -262,7 +262,7 @@ export default function TechPlatformSection() {
                 </div>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-white/10 text-[11px] text-slate-400 text-center">
+              <div className="mt-4 pt-3 border-t border-slate-200 text-[11px] text-slate-400 text-center font-medium">
                 Ever Legit Enterprise Platform
               </div>
             </div>
@@ -273,7 +273,7 @@ export default function TechPlatformSection() {
         <div className="mt-8 sm:mt-10 text-center">
           <Link
             href="/services/saas-software"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 font-semibold text-white text-xs transition-all shadow-md shadow-blue-900/30 active:scale-95"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 font-bold text-white text-xs transition-all shadow-md shadow-blue-500/20 active:scale-95"
           >
             <span>Explore Engineering & Platforms</span>
             <ArrowRight className="w-3.5 h-3.5" />

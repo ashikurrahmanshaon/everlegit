@@ -47,7 +47,7 @@ export default function ScrollUtilities() {
       {showBackToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-20 md:bottom-24 right-5 sm:right-8 z-40 w-11 h-11 rounded-full bg-[#111726]/90 hover:bg-blue-600 text-slate-300 hover:text-white border border-white/15 backdrop-blur-md shadow-xl flex items-center justify-center transition-all duration-200 active:scale-95 animate-fadeIn"
+          className="fixed bottom-20 md:bottom-24 right-5 sm:right-8 z-40 w-11 h-11 rounded-full bg-white/95 hover:bg-blue-600 text-slate-700 hover:text-white border border-slate-200/80 backdrop-blur-md shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-200 active:scale-95 animate-fadeIn"
           aria-label="Scroll back to top"
           title="Back to top"
         >

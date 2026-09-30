@@ -202,7 +202,7 @@ export default function CommandSearchModal() {
     <div
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-black/80 backdrop-blur-md animate-fadeIn font-sans"
+      className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-slate-900/40 backdrop-blur-sm animate-fadeIn font-sans"
     >
       {/* Backdrop click to dismiss */}
       <div
@@ -213,11 +213,11 @@ export default function CommandSearchModal() {
 
       <div
         onKeyDown={handleKeyDown}
-        className="relative z-10 w-full max-w-2xl bg-[#111726] border border-white/20 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh] animate-slideDown"
+        className="relative z-10 w-full max-w-2xl bg-white border border-slate-200 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh] animate-slideDown"
       >
         {/* Search Input Bar */}
-        <div className="flex items-center px-4 py-3.5 border-b border-white/10 bg-white/[0.02]">
-          <Search className="w-5 h-5 text-blue-400 shrink-0 mr-3" />
+        <div className="flex items-center px-4 py-3.5 border-b border-slate-200 bg-slate-50/80">
+          <Search className="w-5 h-5 text-blue-600 shrink-0 mr-3" />
           <input
             ref={inputRef}
             type="text"
@@ -227,24 +227,24 @@ export default function CommandSearchModal() {
               setSelectedIndex(0);
             }}
             placeholder="Search services, portfolio, research briefs, or contact desk..."
-            className="w-full bg-transparent text-sm sm:text-base text-white placeholder-slate-400 focus:outline-none"
+            className="w-full bg-transparent text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:outline-none"
           />
           {query && (
             <button
               onClick={() => setQuery("")}
-              className="text-slate-400 hover:text-white p-1"
+              className="text-slate-400 hover:text-slate-700 p-1"
               title="Clear search"
             >
               <X className="w-4 h-4" />
             </button>
           )}
-          <div className="hidden sm:flex items-center gap-1 ml-2 px-2 py-1 rounded bg-white/10 text-[10px] text-slate-300 font-mono">
+          <div className="hidden sm:flex items-center gap-1 ml-2 px-2 py-1 rounded bg-slate-200 text-[10px] text-slate-700 font-mono font-semibold">
             <span>ESC</span>
           </div>
         </div>
 
         {/* Results List */}
-        <div className="overflow-y-auto flex-1 p-2 space-y-1 divide-y divide-white/[0.04]">
+        <div className="overflow-y-auto flex-1 p-2 space-y-1 divide-y divide-slate-100">
           {filteredResults.length > 0 ? (
             filteredResults.map((item, index) => {
               const Icon = item.icon;
@@ -257,15 +257,15 @@ export default function CommandSearchModal() {
                   onMouseEnter={() => setSelectedIndex(index)}
                   className={`flex items-start gap-3.5 p-3 rounded-xl cursor-pointer transition-colors ${
                     isSelected
-                      ? "bg-blue-600/20 border border-blue-500/40 text-white"
-                      : "hover:bg-white/[0.04] text-slate-200 border border-transparent"
+                      ? "bg-blue-50/80 border border-blue-200 text-slate-900"
+                      : "hover:bg-slate-50 text-slate-700 border border-transparent"
                   }`}
                 >
                   <div
                     className={`p-2 rounded-lg shrink-0 mt-0.5 ${
                       isSelected
-                        ? "bg-blue-600 text-white"
-                        : "bg-white/5 text-slate-400"
+                        ? "bg-blue-600 text-white shadow-xs"
+                        : "bg-slate-100 text-slate-600"
                     }`}
                   >
                     <Icon className="w-4 h-4" />
@@ -273,16 +273,16 @@ export default function CommandSearchModal() {
 
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-2">
-                      <div className="text-sm font-semibold truncate text-white">
+                      <div className="text-sm font-bold truncate text-slate-900">
                         {item.title}
                       </div>
                       {item.badge && (
-                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-blue-300 shrink-0 font-medium">
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 shrink-0 font-semibold">
                           {item.badge}
                         </span>
                       )}
                     </div>
-                    <p className="text-xs text-slate-400 line-clamp-1 mt-0.5">
+                    <p className="text-xs text-slate-500 line-clamp-1 mt-0.5">
                       {item.description}
                     </p>
                   </div>
@@ -290,18 +290,18 @@ export default function CommandSearchModal() {
                   <ArrowRight
                     className={`w-4 h-4 shrink-0 transition-transform mt-1 ${
                       isSelected
-                        ? "text-blue-400 translate-x-0.5"
-                        : "text-slate-600"
+                        ? "text-blue-600 translate-x-0.5"
+                        : "text-slate-400"
                     }`}
                   />
                 </div>
               );
             })
           ) : (
-            <div className="py-12 text-center text-slate-400 space-y-2">
-              <Search className="w-8 h-8 mx-auto text-slate-500 opacity-60" />
-              <p className="text-sm font-semibold text-white">No results found for "{query}"</p>
-              <p className="text-xs text-slate-400">
+            <div className="py-12 text-center text-slate-500 space-y-2">
+              <Search className="w-8 h-8 mx-auto text-slate-400 opacity-60" />
+              <p className="text-sm font-semibold text-slate-900">No results found for "{query}"</p>
+              <p className="text-xs text-slate-500">
                 Try searching for "ecommerce", "import", "SaaS", "marketing", or "estimator".
               </p>
             </div>
@@ -309,19 +309,19 @@ export default function CommandSearchModal() {
         </div>
 
         {/* Modal Footer Hotkey Guide */}
-        <div className="px-4 py-2.5 bg-black/40 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
+        <div className="px-4 py-2.5 bg-slate-50 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-500">
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1">
-              <kbd className="px-1.5 py-0.5 rounded bg-white/10 font-mono text-[10px] text-slate-300">↑</kbd>
-              <kbd className="px-1.5 py-0.5 rounded bg-white/10 font-mono text-[10px] text-slate-300">↓</kbd>
+              <kbd className="px-1.5 py-0.5 rounded bg-slate-200 font-mono text-[10px] text-slate-700 font-semibold">↑</kbd>
+              <kbd className="px-1.5 py-0.5 rounded bg-slate-200 font-mono text-[10px] text-slate-700 font-semibold">↓</kbd>
               <span>to navigate</span>
             </span>
             <span className="flex items-center gap-1">
-              <kbd className="px-1.5 py-0.5 rounded bg-white/10 font-mono text-[10px] text-slate-300">↵</kbd>
+              <kbd className="px-1.5 py-0.5 rounded bg-slate-200 font-mono text-[10px] text-slate-700 font-semibold">↵</kbd>
               <span>to select</span>
             </span>
           </div>
-          <span className="text-slate-400">Ever Legit Global Index</span>
+          <span className="text-slate-500 font-medium">Ever Legit Global Index</span>
         </div>
       </div>
     </div>
