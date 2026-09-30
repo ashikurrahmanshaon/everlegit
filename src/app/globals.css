@@ -235,4 +235,63 @@ button, a {
   animation: slideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #93c5fd 25%,
+    #38bdf8 50%,
+    #93c5fd 75%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+.glass-glow-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(17, 23, 38, 0.95) 0%, rgba(12, 17, 28, 0.98) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(59, 130, 246, 0.12);
+  border-radius: 1.25rem;
+  backdrop-blur: 20px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-glow-card:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), 0 0 35px -5px rgba(59, 130, 246, 0.22);
+  transform: translateY(-2px);
+}
+
+.dot-grid-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+
 

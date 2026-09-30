@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuickConnectDock from "@/components/QuickConnectDock";
+import CommandSearchModal from "@/components/CommandSearchModal";
+import ScrollUtilities from "@/components/ScrollUtilities";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -77,10 +79,12 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-[#0b0f19] text-slate-100 font-sans selection:bg-blue-600/30 selection:text-white">
+        <ScrollUtilities />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
         <QuickConnectDock />
+        <CommandSearchModal />
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { SERVICES } from "@/data/siteData";
+import ProjectScopeEstimator from "@/components/ProjectScopeEstimator";
 import {
   ShoppingBag,
   Ship,
@@ -167,6 +168,11 @@ export default function ServicesPage() {
               </div>
             );
           })}
+        </div>
+
+        {/* Interactive Scope & Turnaround Estimator Section */}
+        <div className="mt-16 sm:mt-24">
+          <ProjectScopeEstimator />
         </div>
 
         {/* Bottom CTA */}

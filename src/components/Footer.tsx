@@ -184,6 +184,19 @@ export default function Footer() {
                   Performance Marketing
                 </Link>
               </li>
+              <li className="pt-1.5 border-t border-white/5">
+                <Link href="/services#estimator" className="text-blue-400 hover:text-blue-300 font-semibold transition-colors block py-0.5">
+                  Scope & Cost Estimator →
+                </Link>
+              </li>
+              <li>
+                <button
+                  onClick={() => window.dispatchEvent(new CustomEvent("open-command-search"))}
+                  className="text-slate-400 hover:text-white transition-colors block py-0.5 text-left cursor-pointer"
+                >
+                  Search Global Index (⌘K)
+                </button>
+              </li>
             </ul>
           </div>
 

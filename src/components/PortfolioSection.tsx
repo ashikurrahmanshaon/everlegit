@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { PORTFOLIO_PROJECTS, PortfolioItem } from "@/data/siteData";
 import {
   ExternalLink,
@@ -9,10 +10,16 @@ import {
   X,
   CheckCircle2,
   FolderGit2,
+  Search,
+  Filter,
+  RotateCcw,
+  Sparkles,
 } from "lucide-react";
 
 export default function PortfolioSection() {
+  const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [searchQuery, setSearchQuery] = useState("");
   const [activeProject, setActiveProject] = useState<PortfolioItem | null>(null);
 
   const categories = [
@@ -35,10 +42,36 @@ export default function PortfolioSection() {
     };
   }, [activeProject]);
 
-  const filteredProjects =
-    selectedCategory === "All"
-      ? PORTFOLIO_PROJECTS
-      : PORTFOLIO_PROJECTS.filter((p) => p.category === selectedCategory);
+  const filteredProjects = useMemo(() => {
+    return PORTFOLIO_PROJECTS.filter((p) => {
+      const matchesCategory =
+        selectedCategory === "All" || p.category === selectedCategory;
+
+      const q = searchQuery.trim().toLowerCase();
+      const matchesQuery =
+        !q ||
+        p.title.toLowerCase().includes(q) ||
+        p.shortDesc.toLowerCase().includes(q) ||
+        p.technologies.some((t) => t.toLowerCase().includes(q)) ||
+        p.features.some((f) => f.toLowerCase().includes(q));
+
+      return matchesCategory && matchesQuery;
+    });
+  }, [selectedCategory, searchQuery]);
+
+  const handleInquireProject = (project: PortfolioItem) => {
+    setActiveProject(null);
+    let sectorParam = "E-Commerce";
+    if (project.category.includes("SaaS")) sectorParam = "Software & Cloud";
+    if (project.category.includes("Import")) sectorParam = "Import & Export";
+    if (project.category.includes("Marketing")) sectorParam = "Digital Marketing";
+
+    router.push(
+      `/contact?interest=${encodeURIComponent(sectorParam)}&project=${encodeURIComponent(
+        project.title
+      )}`
+    );
+  };
 
   return (
     <section className="py-20 sm:py-28 bg-[#0b0f19] border-t border-b border-white/[0.06] font-sans" id="portfolio">
@@ -57,28 +90,77 @@ export default function PortfolioSection() {
           </p>
         </div>
 
-        {/* Category Filters (Mobile Touch Scrollable) */}
-        <div className="flex items-center justify-start sm:justify-center gap-2 mt-10 overflow-x-auto no-scrollbar pb-2 px-1">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all shrink-0 active:scale-95 ${
-                selectedCategory === cat
-                  ? "bg-blue-600 text-white shadow-md shadow-blue-900/40"
-                  : "bg-white/[0.04] text-slate-300 hover:text-white hover:bg-white/10 border border-white/5"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+        {/* Filter & Live Search Toolbar */}
+        <div className="mt-10 p-3 sm:p-4 rounded-2xl bg-[#111726] border border-white/10 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 shadow-lg">
+          {/* Category Pills */}
+          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1 px-0.5">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all shrink-0 active:scale-95 cursor-pointer ${
+                  selectedCategory === cat
+                    ? "bg-blue-600 text-white shadow-md shadow-blue-900/40"
+                    : "bg-white/[0.04] text-slate-300 hover:text-white hover:bg-white/10 border border-white/5"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          {/* Keyword Search Input */}
+          <div className="flex items-center gap-2">
+            <div className="relative flex-1 md:w-64">
+              <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search tech, stack, title..."
+                className="w-full pl-9 pr-7 py-1.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-blue-500"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-0.5"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              )}
+            </div>
+
+            {(selectedCategory !== "All" || searchQuery) && (
+              <button
+                onClick={() => {
+                  setSelectedCategory("All");
+                  setSearchQuery("");
+                }}
+                className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors"
+                title="Reset filters"
+              >
+                <RotateCcw className="w-3.5 h-3.5" />
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Counter & Status indicator */}
+        <div className="mt-4 flex items-center justify-between text-xs text-slate-400 px-1">
+          <span>
+            Showing <strong className="text-white">{filteredProjects.length}</strong> of {PORTFOLIO_PROJECTS.length} platform ventures
+          </span>
+          {selectedCategory !== "All" && (
+            <span className="text-blue-400 font-medium">Filtered by: {selectedCategory}</span>
+          )}
         </div>
 
         {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-6">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
+              id={project.id}
               className="rounded-2xl bg-[#111726] border border-white/10 overflow-hidden flex flex-col justify-between hover:border-white/20 transition-all shadow-md group"
             >
               {/* Card Visual Preview Banner */}
@@ -140,32 +222,61 @@ export default function PortfolioSection() {
                   ))}
                 </div>
 
-                {/* Action Button */}
-                <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+                {/* Action Buttons */}
+                <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
                   <button
                     onClick={() => setActiveProject(project)}
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300 transition-colors cursor-pointer py-1"
                   >
-                    <span>View Project Architecture</span>
+                    <span>View Architecture</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
 
-                  <span className="text-xs text-slate-400">
-                    Case Study
-                  </span>
+                  <button
+                    onClick={() => handleInquireProject(project)}
+                    className="px-3 py-1.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] text-[11px] font-semibold text-slate-200 hover:text-white border border-white/10 transition-colors"
+                  >
+                    Request Similar
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* View All Projects in Portfolio Page */}
-        <div className="mt-12 text-center">
+        {filteredProjects.length === 0 && (
+          <div className="py-16 text-center text-slate-400 space-y-2">
+            <Search className="w-8 h-8 mx-auto text-slate-500 opacity-60" />
+            <p className="text-sm font-semibold text-white">No projects found matching your criteria</p>
+            <p className="text-xs text-slate-400">
+              Try clearing your search query or selecting "All" categories.
+            </p>
+            <button
+              onClick={() => {
+                setSelectedCategory("All");
+                setSearchQuery("");
+              }}
+              className="mt-3 px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-semibold"
+            >
+              Reset Filters
+            </button>
+          </div>
+        )}
+
+        {/* View All Projects / Estimator Shortcut Link */}
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link
-            href="/portfolio"
+            href="/services#estimator"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 transition-all active:scale-95 shadow-md shadow-blue-900/30"
+          >
+            <Sparkles className="w-4 h-4" />
+            <span>Estimate Custom Project Scope</span>
+          </Link>
+          <Link
+            href="/contact"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-semibold text-slate-200 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 transition-all active:scale-95"
           >
-            <span>Explore All Projects & Ventures</span>
+            <span>Consult Operations Desk</span>
             <ArrowRight className="w-4 h-4 text-blue-400" />
           </Link>
         </div>
@@ -245,17 +356,17 @@ export default function PortfolioSection() {
             <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
               <button
                 onClick={() => setActiveProject(null)}
-                className="px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
+                className="px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
               >
                 Close
               </button>
-              <Link
-                href="/contact"
-                onClick={() => setActiveProject(null)}
-                className="px-5 py-2.5 rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white transition-colors shadow-sm"
+              <button
+                onClick={() => handleInquireProject(activeProject)}
+                className="px-5 py-2.5 rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white transition-colors shadow-sm cursor-pointer flex items-center gap-1.5"
               >
-                Inquire About This Service
-              </Link>
+                <span>Request Similar Venture</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
             </div>
           </div>
         </div>
