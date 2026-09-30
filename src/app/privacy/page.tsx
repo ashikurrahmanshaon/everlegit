@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="pt-28 pb-20 sm:pt-36 sm:pb-28 relative overflow-hidden bg-slate-50/70 border-b border-slate-200 font-sans">
+    <div className="pt-24 pb-14 sm:pt-28 sm:pb-18 relative overflow-hidden bg-slate-50/70 border-b border-slate-200 font-sans">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Link
           href="/"

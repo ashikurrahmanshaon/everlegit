@@ -74,15 +74,15 @@ export default function BusinessModelVisual() {
   const ActiveOutIcon = activePillar.outputIcon;
 
   return (
-    <section className="py-20 sm:py-28 bg-slate-50/70 border-t border-b border-slate-200/80 font-sans">
+    <section className="py-14 sm:py-20 bg-slate-50/70 border-t border-b border-slate-200/80 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-3">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200 inline-block shadow-xs">
+        <div className="max-w-3xl mx-auto text-center space-y-2.5">
+          <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200 inline-block shadow-xs">
             Operating Structure
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
             Our Business Model Architecture
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto font-normal">

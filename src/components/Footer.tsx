@@ -28,8 +28,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-slate-100/80 border-t border-slate-200 text-slate-600 text-sm font-sans pb-24 sm:pb-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16">
+    <footer className="bg-slate-100/80 border-t border-slate-200 text-slate-600 text-sm font-sans pb-20 sm:pb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-8 pb-12 border-b border-slate-200">
           
           {/* Brand Info & Inquiries */}

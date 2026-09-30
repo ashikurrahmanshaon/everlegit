@@ -30,15 +30,15 @@ export default function WhyEverLegit() {
   };
 
   return (
-    <section className="py-20 sm:py-28 bg-white border-t border-b border-slate-200/80 font-sans">
+    <section className="py-14 sm:py-20 bg-white border-t border-b border-slate-200/80 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-3">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200 inline-block shadow-xs">
+        <div className="max-w-3xl mx-auto text-center space-y-2.5">
+          <span className="text-xs font-semibold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200 inline-block shadow-xs">
             Operating Governance
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
             How We Approach Every Venture
           </h2>
           <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
@@ -47,7 +47,7 @@ export default function WhyEverLegit() {
         </div>
 
         {/* 5 Principles Grid (Responsive & Balanced) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mt-12 sm:mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mt-10 sm:mt-12">
           {PRINCIPLES.map((principle, index) => {
             const Icon = getIcon(principle.id);
 

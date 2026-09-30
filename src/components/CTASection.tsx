@@ -23,9 +23,9 @@ export default function CTASection() {
   };
 
   return (
-    <section className="py-20 sm:py-28 bg-white border-t border-slate-200/80 font-sans">
+    <section className="py-14 sm:py-20 bg-white border-t border-slate-200/80 font-sans">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl p-6 sm:p-12 lg:p-16 text-center bg-gradient-to-br from-blue-50/70 via-sky-50/40 to-indigo-50/60 border border-blue-200/70 shadow-sm space-y-6">
+        <div className="rounded-3xl p-6 sm:p-10 lg:p-12 text-center bg-gradient-to-br from-blue-50/70 via-sky-50/40 to-indigo-50/60 border border-blue-200/70 shadow-xs space-y-5">
           
           {/* Eyebrow badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 border border-blue-200 text-blue-800 text-xs font-bold shadow-xs">

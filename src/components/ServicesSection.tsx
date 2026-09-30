@@ -31,17 +31,15 @@ export default function ServicesSection() {
   };
 
   return (
-    <section className="py-20 sm:py-28 bg-[#f8fafc] relative overflow-hidden font-sans" id="services">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl h-[500px] bg-radial-glow pointer-events-none" />
-
+    <section className="py-14 sm:py-20 bg-[#f8fafc] relative overflow-hidden font-sans" id="services">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 text-blue-600 text-xs font-bold uppercase tracking-wider">
+        <div className="max-w-3xl mx-auto text-center space-y-2.5">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold uppercase tracking-wider">
             <span>Core Disciplines & Pillars</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
             Built for{" "}
             <span className="text-blue-600">
               Commercial Execution.
@@ -53,40 +51,40 @@ export default function ServicesSection() {
         </div>
 
         {/* Services Grid (Responsive 1 or 2 Columns) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-12 sm:mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mt-10 sm:mt-12">
           {SERVICES.map((service, index) => {
             const Icon = getIcon(service.iconName);
 
             return (
               <div
                 key={service.id}
-                className="bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-8 lg:p-10 flex flex-col justify-between group shadow-sm hover:shadow-xl hover:border-blue-400 transition-all duration-300"
+                className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 flex flex-col justify-between group shadow-xs hover:shadow-md hover:border-slate-300 transition-all duration-200"
               >
                 <div>
                   {/* Top Bar with Number & Icon */}
-                  <div className="flex items-center justify-between mb-5 sm:mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 group-hover:scale-105 group-hover:text-white group-hover:bg-blue-600 transition-all p-3 shadow-sm">
-                      <Icon className="w-6 h-6" />
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center p-2.5 group-hover:scale-105 transition-transform">
+                      <Icon className="w-5 h-5 stroke-[1.75]" />
                     </div>
-                    <span className="text-[11px] text-slate-500 font-bold tracking-wider uppercase px-3 py-1 rounded-full bg-slate-100 border border-slate-200">
+                    <span className="text-xs text-slate-500 font-semibold tracking-wider uppercase px-2.5 py-0.5 rounded-full bg-slate-50 border border-slate-200">
                       Pillar 0{index + 1}
                     </span>
                   </div>
 
                   {/* Title & Short Description */}
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors tracking-tight">
+                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors tracking-tight">
                     {service.title}
                   </h3>
-                  <p className="text-slate-600 mt-2.5 text-xs sm:text-sm leading-relaxed">
+                  <p className="text-slate-600 mt-2 text-xs sm:text-sm leading-relaxed">
                     {service.shortDesc}
                   </p>
 
                   {/* Core Competencies Checklist */}
-                  <div className="mt-6 pt-5 border-t border-slate-100">
-                    <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-3.5">
+                  <div className="mt-5 pt-4 border-t border-slate-100">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2.5">
                       Core Competencies
                     </h4>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {service.features.map((feature) => (
                         <li
                           key={feature}
@@ -101,17 +99,17 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Bottom CTA Link */}
-                <div className="mt-8 pt-5 border-t border-slate-100 flex items-center justify-between">
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
                   <Link
                     href={service.ctaLink}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 transition-all duration-200 active:scale-95 group/btn shadow-md shadow-blue-500/20"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-all duration-150 active:scale-95 group/btn shadow-xs shadow-blue-500/20"
                   >
                     <span>{service.ctaText.replace(" →", "")}</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
                   </Link>
 
-                  <span className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider hidden sm:inline">
-                    Enterprise SLA
+                  <span className="text-xs text-slate-400 font-medium hidden sm:inline">
+                    Enterprise Standard
                   </span>
                 </div>
               </div>
@@ -119,14 +117,14 @@ export default function ServicesSection() {
           })}
         </div>
 
-        {/* Interactive Scope Estimator Banner (Light Corporate Styling) */}
-        <div className="mt-12 p-6 sm:p-7 rounded-3xl bg-gradient-to-r from-blue-50 via-sky-50 to-indigo-50 border border-blue-200/80 flex flex-col sm:flex-row items-center justify-between gap-5 shadow-sm">
-          <div className="flex items-center gap-4 text-center sm:text-left">
-            <div className="w-12 h-12 rounded-2xl bg-white text-blue-600 flex items-center justify-center shrink-0 border border-blue-200 shadow-sm">
-              <Calculator className="w-6 h-6" />
+        {/* Interactive Scope Estimator Banner */}
+        <div className="mt-10 p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-blue-50/80 via-sky-50/50 to-indigo-50/70 border border-blue-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
+          <div className="flex items-center gap-3.5 text-center sm:text-left">
+            <div className="w-10 h-10 rounded-xl bg-white text-blue-600 flex items-center justify-center shrink-0 border border-blue-200 shadow-xs">
+              <Calculator className="w-5 h-5 stroke-[1.75]" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">
+              <h4 className="text-sm sm:text-base font-bold text-slate-900">
                 Want to calculate deliverables, phases & turnaround?
               </h4>
               <p className="text-xs text-slate-600 mt-0.5">
@@ -137,7 +135,7 @@ export default function ServicesSection() {
 
           <Link
             href="/services#estimator"
-            className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shrink-0 flex items-center gap-1.5 transition-all shadow-md shadow-blue-500/25 active:scale-95"
+            className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shrink-0 flex items-center gap-1.5 transition-all shadow-xs shadow-blue-500/20 active:scale-95"
           >
             <span>Launch Scope Estimator</span>
             <ArrowRight className="w-3.5 h-3.5" />

@@ -71,7 +71,7 @@ export default function ContactPage() {
   );
 
   return (
-    <div className="pt-28 pb-20 sm:pt-36 sm:pb-28 relative overflow-hidden bg-slate-50/70 font-sans border-b border-slate-200">
+    <div className="pt-24 pb-14 sm:pt-28 sm:pb-18 relative overflow-hidden bg-slate-50/70 font-sans border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Navigation Breadcrumb */}
         <div className="flex items-center gap-2 text-xs text-slate-500 mb-6">

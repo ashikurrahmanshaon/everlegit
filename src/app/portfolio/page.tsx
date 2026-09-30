@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function PortfolioPage() {
   return (
-    <div className="pt-24 sm:pt-28 pb-20 font-sans bg-slate-50/70 border-b border-slate-200">
+    <div className="pt-20 sm:pt-24 pb-14 sm:pb-18 font-sans bg-slate-50/70 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         {/* Navigation Breadcrumb */}
         <div className="flex items-center gap-2 text-xs text-slate-500 mb-2">
